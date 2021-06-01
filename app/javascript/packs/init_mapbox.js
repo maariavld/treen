@@ -18,10 +18,14 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
+
     markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
       .addTo(map);
+
     });
     fitMapToMarkers(map, markers);
   }

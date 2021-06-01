@@ -7,7 +7,8 @@ class BrandsController < ApplicationController
     @markers = @brands.geocoded.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { brand: flat })
       }
     end
   end
