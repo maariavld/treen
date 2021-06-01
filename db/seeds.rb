@@ -11,15 +11,12 @@ require 'faker'
 puts "Cleaning up database..."
 Brand.destroy_all
 puts "Database cleaned"
-puts "Creating 10 Brands"
-10.times do |i|
-  puts "Creating brand number #{i + 1}"
-    Brand.create(
-      title: movie['title'],
-      overview: movie['overview'],
-      poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
-      rating: movie['vote_average']
-    )
-  end
-end
-puts "Movies created"
+puts "Creating brands..."
+
+Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+
+puts "Brands created"
