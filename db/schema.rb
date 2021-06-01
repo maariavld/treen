@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_100818) do
   create_table "brand_policies", force: :cascade do |t|
     t.bigint "brand_id", null: false
     t.bigint "policy_id", null: false
-    t.decimal "ranking", precision: 2, scale: 1
+    t.integer "ranking"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["brand_id"], name: "index_brand_policies_on_brand_id"
