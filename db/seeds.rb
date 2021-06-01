@@ -6,20 +6,89 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
-
 puts "Cleaning up database..."
 Brand.destroy_all
 puts "Database cleaned"
-puts "Creating 10 Brands"
-10.times do |i|
-  puts "Creating brand number #{i + 1}"
-    Brand.create(
-      title: movie['title'],
-      overview: movie['overview'],
-      poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
-      rating: movie['vote_average']
-    )
-  end
-end
-puts "Movies created"
+puts "Creating 10 brands..."
+
+brand = Brand.create(
+      name: ,
+      address: ,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+brand = Brand.create(
+      name: ,
+      address:,
+      description: ,
+)
+puts "Created brand #{brand.id}"
+
+puts " 10 brands created"
+
+# puts "Creating 10 brands..."
+
+# Brand.create(
+#       name: ,
+#       address:,
+#       description: ,
+# )
+
+# puts " 10 brands created"
