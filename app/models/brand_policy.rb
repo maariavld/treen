@@ -1,0 +1,2 @@
+class BrandPolicy < ApplicationRecord
+end
