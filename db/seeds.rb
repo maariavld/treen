@@ -9,7 +9,7 @@
 require 'faker'
 
 puts "Cleaning up database..."
-Brands.destroy_all
+Brand.destroy_all
 puts "Database cleaned"
 puts "Creating 10 Brands"
 10.times do |i|
