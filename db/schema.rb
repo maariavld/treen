@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2021_06_01_152436) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "brand_policies", force: :cascade do |t|
+    t.bigint "brand_id", null: false
+    t.bigint "policy_id", null: false
+    t.integer "ranking"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["brand_id"], name: "index_brand_policies_on_brand_id"
+    t.index ["policy_id"], name: "index_brand_policies_on_policy_id"
+  end
+
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -50,16 +60,6 @@ ActiveRecord::Schema.define(version: 2021_06_01_152436) do
     t.decimal "avg_prices", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "brands_policies", force: :cascade do |t|
-    t.bigint "brand_id", null: false
-    t.bigint "policy_id", null: false
-    t.integer "ranking"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["brand_id"], name: "index_brands_policies_on_brand_id"
-    t.index ["policy_id"], name: "index_brands_policies_on_policy_id"
   end
 
   create_table "policies", force: :cascade do |t|
@@ -95,8 +95,9 @@ ActiveRecord::Schema.define(version: 2021_06_01_152436) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "brands_policies", "brands"
-  add_foreign_key "brands_policies", "policies"
+  add_foreign_key "brand_policies", "brands"
+  add_foreign_key "brand_policies", "policies"
   add_foreign_key "reviews", "brands"
   add_foreign_key "reviews", "users"
+
 end
