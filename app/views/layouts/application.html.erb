@@ -8,15 +8,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'map' %>
   </head>
 
   <body>
-    # <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
+    <% unless controller_name == "brands" && action_name == "index" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
