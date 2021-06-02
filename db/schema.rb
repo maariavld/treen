@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_06_01_165619) do
     t.decimal "avg_prices", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "policies", force: :cascade do |t|
