@@ -14,10 +14,11 @@
   </head>
 
   <body>
-    # <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
+    <% unless controller_name == "brands" && action_name == "index" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
