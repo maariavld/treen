@@ -75,7 +75,7 @@ puts "Created #{kca.name} #{good_cause.title}\'s policy."
 kca_co_2 = BrandPolicy.new(
             brand_id: kca.id,
             policy_id: co_2.id,
-            ranking: 3)
+            ranking: 5)
 puts "Created #{kca.name} #{co_2.title}\'s policy."
 
 file_reco = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622557098/brands/recolution-logo_hy20ma.png')
@@ -91,12 +91,12 @@ puts "Creating #{recolution.name} \' policies..."
 recolution_vegan = BrandPolicy.new(
             brand_id: recolution.id,
             policy_id: vegan.id,
-            ranking: 0)
+            ranking: 5)
 puts "Created #{recolution.name} #{vegan.title}\'s policy."
 recolution_organic = BrandPolicy.new(
             brand_id: recolution.id,
             policy_id: organic.id,
-            ranking: 5)
+            ranking: 3)
 puts "Created #{recolution.name} #{organic.title}\'s policy."
 recolution_fair_trade = BrandPolicy.new(
             brand_id: recolution.id,
@@ -106,7 +106,7 @@ puts "Created #{recolution.name} #{fair_trade.title}\'s policy."
 recolution_good_cause = BrandPolicy.new(
             brand_id: recolution.id,
             policy_id: good_cause.id,
-            ranking: 4)
+            ranking: 2)
 puts "Created #{recolution.name} #{good_cause.title}\'s policy."
 recolution_co_2 = BrandPolicy.new(
             brand_id: recolution.id,
@@ -139,7 +139,7 @@ puts "Created #{armed_angels.name} #{organic.title}\'s policy."
 armed_angels_fair_trade = BrandPolicy.new(
             brand_id: armed_angels.id,
             policy_id: fair_trade.id,
-            ranking: 5)
+            ranking: 3)
 puts "Created #{armed_angels.name} #{fair_trade.title}\'s policy."
 armed_angels_good_cause = BrandPolicy.new(
             brand_id: armed_angels.id,
@@ -149,7 +149,7 @@ puts "Created #{armed_angels.name} #{good_cause.title}\'s policy."
 armed_angels_co_2 = BrandPolicy.new(
             brand_id: armed_angels.id,
             policy_id: co_2.id,
-            ranking: 5)
+            ranking: 3)
 puts "Created #{armed_angels.name} #{co_2.title}\'s policy."
 
 file_bt = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622557622/brands/Logo_WebsiteTransparent_eisvfv.png')
@@ -162,6 +162,33 @@ bridge_tunnel.photo.attach(io: file_bt, filename: 'bridgetunnel.png', content_ty
 bridge_tunnel.save
 puts "Created brand #{bridge_tunnel.id}. #{bridge_tunnel.name}"
 
+puts "Creating #{bridge_tunnel.name} \' policies..."
+bridge_tunnel_vegan = BrandPolicy.new(
+            brand_id: bridge_tunnel.id,
+            policy_id: vegan.id,
+            ranking: 0 )
+puts "Created #{bridge_tunnel.name} #{vegan.title}\'s policy."
+bridge_tunnel_organic = BrandPolicy.new(
+            brand_id: bridge_tunnel.id,
+            policy_id: organic.id,
+            ranking: 3)
+puts "Created #{bridge_tunnel.name} #{organic.title}\'s policy."
+bridge_tunnel_fair_trade = BrandPolicy.new(
+            brand_id: bridge_tunnel.id,
+            policy_id: fair_trade.id,
+            ranking: 5)
+puts "Created #{bridge_tunnel.name} #{fair_trade.title}\'s policy."
+bridge_tunnel_good_cause = BrandPolicy.new(
+            brand_id: bridge_tunnel.id,
+            policy_id: good_cause.id,
+            ranking: 5)
+puts "Created #{bridge_tunnel.name} #{good_cause.title}\'s policy."
+bridge_tunnel_co_2 = BrandPolicy.new(
+            brand_id: bridge_tunnel.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{bridge_tunnel.name} #{co_2.title}\'s policy."
+
 file_cp = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1622558044/brands/1966069_270974953067415_388723653_o.jpg_jx9r4l.jpg')
 cory_phae = Brand.create(
       name: 'Cory&Phäe',
@@ -171,6 +198,33 @@ cory_phae = Brand.create(
 cory_phae.photo.attach(io: file_cp, filename: 'coryphae.jpg', content_type: 'image/jpg')
 cory_phae.save
 puts "Created brand #{cory_phae.id}. #{cory_phae.name}"
+
+puts "Creating #{cory_phae.name} \' policies..."
+cory_phae_vegan = BrandPolicy.new(
+            brand_id: cory_phae.id,
+            policy_id: vegan.id,
+            ranking: 0 )
+puts "Created #{cory_phae.name} #{vegan.title}\'s policy."
+cory_phae_organic = BrandPolicy.new(
+            brand_id: cory_phae.id,
+            policy_id: organic.id,
+            ranking: 3)
+puts "Created #{cory_phae.name} #{organic.title}\'s policy."
+cory_phae_fair_trade = BrandPolicy.new(
+            brand_id: cory_phae.id,
+            policy_id: fair_trade.id,
+            ranking: 4)
+puts "Created #{cory_phae.name} #{fair_trade.title}\'s policy."
+cory_phae_good_cause = BrandPolicy.new(
+            brand_id: cory_phae.id,
+            policy_id: good_cause.id,
+            ranking: 5)
+puts "Created #{cory_phae.name} #{good_cause.title}\'s policy."
+cory_phae_co_2 = BrandPolicy.new(
+            brand_id: cory_phae.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{cory_phae.name} #{co_2.title}\'s policy."
 
 file_fk = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622558488/brands/logo_filippa_k.rYsiqCL3SZTrw9SAM_aeg2n2.png')
 filippa_k = Brand.create(
@@ -182,6 +236,33 @@ filippa_k.photo.attach(io: file_fk, filename: 'filippak.jpg', content_type: 'ima
 filippa_k.save
 puts "Created brand #{filippa_k.id}. #{filippa_k.name}"
 
+puts "Creating #{filippa_k.name} \' policies..."
+filippa_k_vegan = BrandPolicy.new(
+            brand_id: filippa_k.id,
+            policy_id: vegan.id,
+            ranking: 0 )
+puts "Created #{filippa_k.name} #{vegan.title}\'s policy."
+filippa_k_organic = BrandPolicy.new(
+            brand_id: filippa_k.id,
+            policy_id: organic.id,
+            ranking: 3)
+puts "Created #{filippa_k.name} #{organic.title}\'s policy."
+filippa_k_fair_trade = BrandPolicy.new(
+            brand_id: filippa_k.id,
+            policy_id: fair_trade.id,
+            ranking: 4)
+puts "Created #{filippa_k.name} #{fair_trade.title}\'s policy."
+filippa_k_good_cause = BrandPolicy.new(
+            brand_id: filippa_k.id,
+            policy_id: good_cause.id,
+            ranking: 2)
+puts "Created #{filippa_k.name} #{good_cause.title}\'s policy."
+filippa_k_co_2 = BrandPolicy.new(
+            brand_id: filippa_k.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{filippa_k.name} #{co_2.title}\'s policy."
+
 file_ns = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622558694/brands/Horizontal_Brown-01_jqxwws.png')
 narah_soleigh = Brand.create(
       name: 'Narah Soleigh',
@@ -191,6 +272,33 @@ narah_soleigh = Brand.create(
 narah_soleigh.photo.attach(io: file_ns, filename: 'narah_soleigh.png', content_type: 'image/png')
 narah_soleigh.save
 puts "Created brand #{narah_soleigh.id}. #{narah_soleigh.name}"
+
+puts "Creating #{narah_soleigh.name} \' policies..."
+narah_soleigh_vegan = BrandPolicy.new(
+            brand_id: narah_soleigh.id,
+            policy_id: vegan.id,
+            ranking: 0)
+puts "Created #{narah_soleigh.name} #{vegan.title}\'s policy."
+narah_soleigh_organic = BrandPolicy.new(
+            brand_id: narah_soleigh.id,
+            policy_id: organic.id,
+            ranking: 4)
+puts "Created #{narah_soleigh.name} #{organic.title}\'s policy."
+narah_soleigh_fair_trade = BrandPolicy.new(
+            brand_id: narah_soleigh.id,
+            policy_id: fair_trade.id,
+            ranking: 4)
+puts "Created #{narah_soleigh.name} #{fair_trade.title}\'s policy."
+narah_soleigh_good_cause = BrandPolicy.new(
+            brand_id: narah_soleigh.id,
+            policy_id: good_cause.id,
+            ranking: 4)
+puts "Created #{narah_soleigh.name} #{good_cause.title}\'s policy."
+narah_soleigh_co_2 = BrandPolicy.new(
+            brand_id: narah_soleigh.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{narah_soleigh.name} #{co_2.title}\'s policy."
 
 file_dd = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622558981/brands/rmr0l4dhxti253hqhd42.png')
 danle_ding = Brand.create(
@@ -202,6 +310,33 @@ danle_ding.photo.attach(io: file_dd, filename: 'danleding.png', content_type: 'i
 danle_ding.save
 puts "Created brand #{danle_ding.id}. #{danle_ding.name}"
 
+puts "Creating #{danle_ding.name} \' policies..."
+danle_ding_vegan = BrandPolicy.new(
+            brand_id: danle_ding.id,
+            policy_id: vegan.id,
+            ranking: 5 )
+puts "Created #{danle_ding.name} #{vegan.title}\'s policy."
+danle_ding_organic = BrandPolicy.new(
+            brand_id: danle_ding.id,
+            policy_id: organic.id,
+            ranking: 5)
+puts "Created #{danle_ding.name} #{organic.title}\'s policy."
+danle_ding_fair_trade = BrandPolicy.new(
+            brand_id: danle_ding.id,
+            policy_id: fair_trade.id,
+            ranking: 3)
+puts "Created #{danle_ding.name} #{fair_trade.title}\'s policy."
+danle_ding_good_cause = BrandPolicy.new(
+            brand_id: danle_ding.id,
+            policy_id: good_cause.id,
+            ranking: 2)
+puts "Created #{danle_ding.name} #{good_cause.title}\'s policy."
+danle_ding_co_2 = BrandPolicy.new(
+            brand_id: danle_ding.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{danle_ding.name} #{co_2.title}\'s policy."
+
 file_achiy = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/ar_16:9,c_crop,e_grayscale,g_auto,h_150,w_200/v1622559176/brands/u2zhrxgxorvfykbqajbb.png')
 achiy = Brand.create(
       name: 'ACHIY',
@@ -212,6 +347,33 @@ achiy.photo.attach(io: file_achiy, filename: 'achiy.png', content_type: 'image/p
 achiy.save
 puts "Created brand #{achiy.id}. #{achiy.name}"
 
+puts "Creating #{achiy.name} \' policies..."
+achiy_vegan = BrandPolicy.new(
+            brand_id: achiy.id,
+            policy_id: vegan.id,
+            ranking: 5 )
+puts "Created #{achiy.name} #{vegan.title}\'s policy."
+achiy_organic = BrandPolicy.new(
+            brand_id: achiy.id,
+            policy_id: organic.id,
+            ranking: 5)
+puts "Created #{achiy.name} #{organic.title}\'s policy."
+achiy_fair_trade = BrandPolicy.new(
+            brand_id: achiy.id,
+            policy_id: fair_trade.id,
+            ranking: 3)
+puts "Created #{achiy.name} #{fair_trade.title}\'s policy."
+achiy_good_cause = BrandPolicy.new(
+            brand_id: achiy.id,
+            policy_id: good_cause.id,
+            ranking: 2)
+puts "Created #{achiy.name} #{good_cause.title}\'s policy."
+achiy_co_2 = BrandPolicy.new(
+            brand_id: achiy.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{achiy.name} #{co_2.title}\'s policy."
+
 file_mhw = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622559697/brands/logo_gibcsz.jpg')
 ma_hemp_wear = Brand.create(
       name: 'MÁ Hemp Wear',
@@ -221,6 +383,33 @@ ma_hemp_wear = Brand.create(
 ma_hemp_wear.photo.attach(io: file_mhw, filename: 'mhw.jpg', content_type: 'image/jpg')
 ma_hemp_wear.save
 puts "Created brand #{ma_hemp_wear.id}. #{ma_hemp_wear.name}"
+
+puts "Creating #{ma_hemp_wear.name} \' policies..."
+ma_hemp_wear_vegan = BrandPolicy.new(
+            brand_id: ma_hemp_wear.id,
+            policy_id: vegan.id,
+            ranking: 5 )
+puts "Created #{ma_hemp_wear.name} #{vegan.title}\'s policy."
+ma_hemp_wear_organic = BrandPolicy.new(
+            brand_id: ma_hemp_wear.id,
+            policy_id: organic.id,
+            ranking: 5)
+puts "Created #{ma_hemp_wear.name} #{organic.title}\'s policy."
+ma_hemp_wear_fair_trade = BrandPolicy.new(
+            brand_id: ma_hemp_wear.id,
+            policy_id: fair_trade.id,
+            ranking: 3)
+puts "Created #{ma_hemp_wear.name} #{fair_trade.title}\'s policy."
+ma_hemp_wear_good_cause = BrandPolicy.new(
+            brand_id: ma_hemp_wear.id,
+            policy_id: good_cause.id,
+            ranking: 2)
+puts "Created #{ma_hemp_wear.name} #{good_cause.title}\'s policy."
+ma_hemp_wear_co_2 = BrandPolicy.new(
+            brand_id: ma_hemp_wear.id,
+            policy_id: co_2.id,
+            ranking: 3)
+puts "Created #{ma_hemp_wear.name} #{co_2.title}\'s policy."
 
 puts " #{Brand.count} brands created"
 
