@@ -17,7 +17,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/erikvogler/ckpfmi53a1d8s17qqmygpjvfb'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
 
@@ -48,7 +48,7 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map);
         });
-    fitMapToMarkers(map, markers);
+        fitMapToMarkers(map, markers);
 
         return false;
     };
