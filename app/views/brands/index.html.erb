@@ -4,6 +4,13 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
+<div id='map-ui'>
+    <ul>
+        <li><a href='#' id='filter-vegan'>show only vegan stores</a></li>
+        <li><a href='#' class='active' id='filter-all'>show all stores</a></li>
+    </ul>
+</div>
+
 <%# Brand.create(name:'Hola', address:'Rudi-Dutschke-Straße 26, 10969 Berlin') %>
 <%# Brand.create(name:'hello', address:'Leipziger Pl. 12, 10117 Berlin') %>
 <%# Brand.create(name:'HALLO', address:'Panoramastraße 1A, 10178 Berlin') %>
