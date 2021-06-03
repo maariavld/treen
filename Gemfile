@@ -35,6 +35,7 @@ gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 gem 'pundit'
+gem 'social-share-button'
 
 group :development, :test do
   gem 'pry-byebug'

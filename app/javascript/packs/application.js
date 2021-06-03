@@ -22,6 +22,7 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import { initMapbox } from "./init_mapbox";
+import 'social-share-button';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

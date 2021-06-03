@@ -1,3 +1,20 @@
+<div>
+<%= form_tag brands_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-input",
+          placeholder: "Enter an address"
+        %>
+        <%= select_tag "filter", options_from_collection_for_select(@policies, "id", "title")%>
+        <%= submit_tag "Find", class: "search-button" %>
+      <% end %>
+</div>
+<div id="map"
+     style="width: 100%; height: 92vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div id="map"
      style="width: 100%; height: 92vh;"
      data-markers="<%= @markers.to_json %>"
@@ -8,3 +25,17 @@
 <%# Brand.create(name:'hello', address:'Leipziger Pl. 12, 10117 Berlin') %>
 <%# Brand.create(name:'HALLO', address:'Panoramastraße 1A, 10178 Berlin') %>
 <%# Brand.create(name:'BEST', address:'Tauentzienstraße 21-24, 10789 Berlin') %>
+<script type="text/javascript">
+$( document ).ready(function() {
+$("#filters").slider({});
+});
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
