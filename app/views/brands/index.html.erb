@@ -1,26 +1,50 @@
+
 <div id="map"
      style="width: 100%; height: 92vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+<a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a>
 
-<div id='map-ui'>
-    <ul>
-        <li><a href='#' id='filter-vegan'>show only vegan stores</a></li>
-        <li><a href='#' class='active' id='filter-all'>show all stores</a></li>
-        <li><a href='#' id='filter-good-cause'>show only good cause stores</a></li>
-    </ul>
+<div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">&times;</div>
+          <ul class="badge_icons mt-3">
+            <li class="mb-2"><a href='#' class='active' id='filter-all'><%= image_tag 'https://i.pinimg.com/originals/ff/57/7a/ff577abcece6041ac716068c1a449c72.png', style: 'height:40px;width:40px' %></a></li>
+            <li class="mb-2"><a href='#' id='filter-vegan'><%= image_tag 'https://www.pinclipart.com/picdir/big/175-1754142_hot-food-organic-pepper-chili-vegetarian-vegan-vegetarian.png', style: 'height:40px;width:40px' %></a></li>
+            <li class="mb-2"><a href='#' id='filter-good-cause'><%= image_tag 'https://img.icons8.com/ios/452/charity.png', style: 'height:40px;width:40px' %></a></li>
+            <li class="mb-2"><a href='#' id='filter-fair-trade'><%= image_tag 'https://www.pngkey.com/png/full/310-3106375_celebrating-fairtrade-fortnight-fair-trade-logo-png.png', style: 'height:40px;width:40px' %></a></li>
+            <li class="mb-2"><a href='#' id='filter-co-2'><%= image_tag 'https://cdn1.iconfinder.com/data/icons/eco-food-and-cosmetic-labels/128/Artboard_63-2-512.png', style: 'height:40px;width:40px' %></a></li>
+            <li class="mb-2"><a href='#' id='filter-organic'><%= image_tag 'https://image.flaticon.com/icons/png/512/25/25091.png', style: 'height:40px;width:40px' %></a></li>
+       <!-- <li><a href='#' id='filter-second-hand'><%= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:40px;width:40px' %></a></li> -->
+         </ul>
+        </div>
+      </div>
 </div>
-<%# <label for="customRange2" class="form-label">Example range</label>
-<input type="range" class="form-range" min="0" max="5" id="customRange2">
-<%# Brand.create(name:'Hola', address:'Rudi-Dutschke-Straße 26, 10969 Berlin') %>
-<%# Brand.create(name:'hello', address:'Leipziger Pl. 12, 10117 Berlin') %>
-<%# Brand.create(name:'HALLO', address:'Panoramastraße 1A, 10178 Berlin') %>
-<%# Brand.create(name:'BEST', address:'Tauentzienstraße 21-24, 10789 Berlin') %>
-<%# <%= text_field_tag "ex2", nil, type: 'text',
-                 data: {'slider-id' => 'ex1Slider',
-                        'slider-min' => '10',
-                        'slider-max' => '1000',
-                        'slider-step' => '5',
-                        'slider-value' => '[250,450]' }
- %>
+<!-- <div id='map-ui'>
+    <ul>
+        <li class="mb-2"><a href='#' id='filter-vegan'><%= image_tag 'https://www.pinclipart.com/picdir/big/175-1754142_hot-food-organic-pepper-chili-vegetarian-vegan-vegetarian.png', style: 'height:30px;width:30px' %></a></li>
+        <li class="mb-2"><a href='#' class='active' id='filter-all'><%= image_tag 'https://i.pinimg.com/originals/ff/57/7a/ff577abcece6041ac716068c1a449c72.png', style: 'height:30px;width:30px' %></a></li>
+        <li class="mb-2"><a href='#' id='filter-good-cause'><%= image_tag 'https://img.icons8.com/ios/452/charity.png', style: 'height:30px;width:30px' %></a></li>
+        <li class="mb-2"><a href='#' id='filter-fair-trade'><%= image_tag 'https://www.pngkey.com/png/full/310-3106375_celebrating-fairtrade-fortnight-fair-trade-logo-png.png', style: 'height:30px;width:30px' %></a></li>
+        <li class="mb-2"><a href='#' id='filter-co-2'><%= image_tag 'https://cdn1.iconfinder.com/data/icons/eco-food-and-cosmetic-labels/128/Artboard_63-2-512.png', style: 'height:30px;width:30px' %></a></li>
+        <li class="mb-2"><a href='#' id='filter-organic'><%= image_tag 'https://image.flaticon.com/icons/png/512/25/25091.png', style: 'height:30px;width:30px' %></a></li>
+        <li><a href='#' id='filter-second-hand'><%= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:30px;width:30px' %></a></li>
+    </ul>
+</div> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+</script>
