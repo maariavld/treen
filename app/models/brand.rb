@@ -11,9 +11,9 @@ class Brand < ApplicationRecord
     end
   end
 
-  def organic_value(x)
+  def good_cause
     self.brand_policies.any? do |bp|
-      bp.ranking >= x && bp.policy.title == 'Organic'
+      bp.ranking >= 3 && bp.policy.title == 'Good Cause'
     end
   end
 end
