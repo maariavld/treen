@@ -5,11 +5,12 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
   var vegan = document.getElementById('filter-vegan');
   var all = document.getElementById('filter-all');
+  var good = document.getElementById('filter-good-cause');
 
   const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  map.fitBounds(bounds, { padding: 70, maxZoom: 25, duration: 0 });
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -53,6 +54,29 @@ const initMapbox = () => {
         markers.filter(function(f) {
           // console.log(f);
           return f.vegan;
+        }).forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
+        .addTo(map);
+        });
+        fitMapToMarkers(map, markers);
+
+        return false;
+    };
+
+        good.onclick = function(e) {
+        all.className = '';
+        this.className = 'active';
+        document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+          element.remove()
+        });
+        // The setFilter function takes a GeoJSON feature object
+        // and returns true to show it or false to hide it.
+        markers.filter(function(f) {
+          // console.log(f);
+          return f.good;
         }).forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
         new mapboxgl.Marker()
