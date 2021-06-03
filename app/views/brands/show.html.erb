@@ -1,8 +1,1 @@
-<a data-module="SocialShareButton"
-     data-module-text="No water in mars yet"
-     data-module-tags="not,awesome"
-     data-module-via="NASA"
-     data-module-base-url="https://firstandthird.com/"
-     data-module-net="twitter">Share on Twitter custom all</a>
-
-<%= social_share_button_tag(@brand.name, 'data-twitter-title' => 'TheTitleForTwitter') %>
+<%= social_share_button_tag('I have discovered this sustainable brand {{@brand.name}}', url: 'https://treen-mv.herokuapp.com') '%>

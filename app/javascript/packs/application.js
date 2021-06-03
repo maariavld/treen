@@ -7,6 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require('packs/social-share-button.js.erb')
 // import {initCarousel} from "../plugins/carousel"
 
 Rails.start()
