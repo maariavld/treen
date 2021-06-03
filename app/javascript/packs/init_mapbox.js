@@ -6,6 +6,10 @@ const initMapbox = () => {
   var vegan = document.getElementById('filter-vegan');
   var all = document.getElementById('filter-all');
   var good = document.getElementById('filter-good-cause');
+  var fairTrade = document.getElementById('filter-fair-trade');
+  var co2 = document.getElementById('filter-co-2');
+  var secondHand = document.getElementById('filter-second-hand');
+  var organic = document.getElementById('filter-organic');
 
   const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -88,9 +92,99 @@ const initMapbox = () => {
 
         return false;
     };
+    fairTrade.onclick = function(e) {
+        all.className = '';
+        this.className = 'active';
+        document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+          element.remove()
+        });
+        // The setFilter function takes a GeoJSON feature object
+        // and returns true to show it or false to hide it.
+        markers.filter(function(f) {
+          // console.log(f);
+          return f.fairTrade;
+        }).forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
+        .addTo(map);
+        });
+        fitMapToMarkers(map, markers);
+
+        return false;
+    };
+    co2.onclick = function(e) {
+      all.className = '';
+      this.className = 'active';
+      document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+        element.remove()
+      });
+        // The setFilter function takes a GeoJSON feature object
+        // and returns true to show it or false to hide it.
+        markers.filter(function(f) {
+          // console.log(f);
+          return f.co2;
+        }).forEach((marker) => {
+          const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+          new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup)
+          .addTo(map);
+        });
+        fitMapToMarkers(map, markers);
+
+        return false;
+    };
+
+    organic.onclick = function(e) {
+      all.className = '';
+      this.className = 'active';
+      document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+        element.remove()
+      });
+        // The setFilter function takes a GeoJSON feature object
+        // and returns true to show it or false to hide it.
+        markers.filter(function(f) {
+          // console.log(f);
+          return f.organic;
+        }).forEach((marker) => {
+          const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+          new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup)
+          .addTo(map);
+        });
+        fitMapToMarkers(map, markers);
+
+        return false;
+    };
+
+    secondHand.onclick = function(e) {
+      all.className = '';
+      this.className = 'active';
+      document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+        element.remove()
+      });
+        // The setFilter function takes a GeoJSON feature object
+        // and returns true to show it or false to hide it.
+        markers.filter(function(f) {
+          // console.log(f);
+          return f.secondHand;
+        }).forEach((marker) => {
+          const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+          new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup)
+          .addTo(map);
+        });
+        fitMapToMarkers(map, markers);
+
+        return false;
+    };
 
     all.onclick = function() {
-        food.className = '';
+        all.className = '';
         this.className = 'active';
         map.markerLayer.setFilter(function(f) {
             // Returning true for all markers shows everything.
