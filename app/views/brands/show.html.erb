@@ -1,3 +1,4 @@
+
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-12">
@@ -6,12 +7,36 @@
     </div>
   </div>
 </div>
-<div class="icons">
-  <a href="#"><%= image_tag "carbon-footprint.png", width: 30 %></a>
-  <a href="#"><%= image_tag "fair-trade.png", width: 30 %></a>
-  <a href="#"><%= image_tag "plant-based.png", width: 30 %></a>
-  <a href="#"><%= image_tag "solidarity.png", width: 30 %></a>
+<br>
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-12">
+      <div class="icon">
+        <a href="#" class ="icon"><%= image_tag "carbon-footprint.png", width: 50 %></a>
+        <a href="#" class ="icon"><%= image_tag "fair-trade.png", width: 40 %></a>
+        <a href="#" class ="icon"><%= image_tag "plant-based.png", width: 40 %></a>
+        <a href="#" class ="icon"><%= image_tag "solidarity.png", width: 40 %></a>
+      </div>
+    </div>
+  </div>
 </div>
-
-
+<br>
+<div class="container margin-top-negative">
+  <h5>Reviews</h5>
+    <div class="row">
+      <div class="col-12">
+        <div class="text-muted">
+          <% @brand_reviews.each do |review| %>
+            <div class= "reviews"><%= review.content %></div>
+            <hr/>
+           <!--  <tr>
+                <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
+                <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+            </tr> -->
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
 <%=render 'shared/reviewform' %>

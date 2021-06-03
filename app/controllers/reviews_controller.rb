@@ -14,11 +14,12 @@ class ReviewsController < ApplicationController
     # we need `restaurant_id` to associate review with corresponding restaurant
     @brand = Brand.find(params[:brand_id])
     @review.brand = @brand
+    @review.user = current_user
     @review.save
+    authorize @review
     redirect_to brand_path(@brand)
     # @review = Review.new(review_params)
     # @review.user = current_user
-    # authorize @review
 
     # if @review.save
     #   redirect_to @review, notice: 'Review was succesfully created'
@@ -46,8 +47,8 @@ class ReviewsController < ApplicationController
   private
 
   def set_review
-      @review = Review.find(params[:id])
-      authorize @review
+    @review = Review.find(params[:id])
+    authorize @review
   end
 
   def review_params

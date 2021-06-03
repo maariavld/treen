@@ -23,5 +23,6 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
   def show
     @brand = Brand.find(params[:id])
     @review = Review.new
+    @brand_reviews = @brand.reviews
   end
 end
