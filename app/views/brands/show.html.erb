@@ -1,1 +1,17 @@
-<p>HELLO WORLD</p>
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-5"><%= @brand.name %></h1>
+      <p class="text-muted"><%= @brand.description %></p>
+    </div>
+  </div>
+</div>
+<div class="icons">
+  <a href="#"><%= image_tag "carbon-footprint.png", width: 30 %></a>
+  <a href="#"><%= image_tag "fair-trade.png", width: 30 %></a>
+  <a href="#"><%= image_tag "plant-based.png", width: 30 %></a>
+  <a href="#"><%= image_tag "solidarity.png", width: 30 %></a>
+</div>
+
+
+<%=render 'shared/reviewform' %>

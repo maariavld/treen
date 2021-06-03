@@ -6,16 +6,25 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review= Review.new
+    @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
-    authorize @review
+    # we need `restaurant_id` to associate review with corresponding restaurant
+    @brand = Brand.find(params[:brand_id])
+    @review.brand = @brand
+    @review.save
+    redirect_to brand_path(@brand)
+    # @review = Review.new(review_params)
+    # @review.user = current_user
+    # authorize @review
 
-    if @review.save
-      redirect_to @review, notice: 'Review was succesfully created'
+    # if @review.save
+    #   redirect_to @review, notice: 'Review was succesfully created'
+    # else
+    #   render :new
+    # end
   end
 
   def edit
@@ -34,7 +43,7 @@ class ReviewsController < ApplicationController
     redirect_to reviews_url, notice: 'Review was succesfully destroyed.'
   end
 
-private
+  private
 
   def set_review
       @review = Review.find(params[:id])
