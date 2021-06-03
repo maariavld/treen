@@ -30,6 +30,18 @@ const initMapbox = () => {
     });
     fitMapToMarkers(map, markers);
 
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+        showAccuracyCircle: false
+      }),
+    );
+
+    map.addControl(new mapboxgl.NavigationControl());
+
     vegan.onclick = function(e) {
         all.className = '';
         this.className = 'active';
