@@ -39,7 +39,7 @@ const initMapbox = () => {
         // The setFilter function takes a GeoJSON feature object
         // and returns true to show it or false to hide it.
         markers.filter(function(f) {
-          console.log(f);
+          // console.log(f);
           return f.vegan;
         }).forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);

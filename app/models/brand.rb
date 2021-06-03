@@ -10,4 +10,10 @@ class Brand < ApplicationRecord
       bp.ranking >= 1 && bp.policy.title == 'Vegan'
     end
   end
+
+  def organic_value(x)
+    self.brand_policies.any? do |bp|
+      bp.ranking >= x && bp.policy.title == 'Organic'
+    end
+  end
 end

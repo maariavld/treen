@@ -10,6 +10,7 @@ class BrandsController < ApplicationController
         lng: brand.longitude,
         info_window: render_to_string(partial: "info_window", locals: { brand: brand }),
         vegan: brand.is_vegan?
+        # organic: brand.organic_value
       }
     end
   end
