@@ -1,4 +1,4 @@
 class BrandPolicy < ApplicationRecord
-  belongs_to :brands
-  belongs_to :policies
+  belongs_to :brand
+  belongs_to :policy
 end
