@@ -1,24 +1,9 @@
-<div class="carousel">
-    <div class="arrow-left">
-      <span class="arrow">&#x2039;</span>
-    </div>
-    <%= cl_image_tag("https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/treen_z0ezrx.png",
-      width: 400, height: 300, crop: :fill) %>
-    <div class="arrow-right">
-      <span class="arrow">&#x203A;</span>
-    </div>
-    <div class="indicators">
-      <span class="active"><a class="skip-btn" href="#">skip<i class="fas fa-chevron-right"></i></a></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-<script type="text/javascript">
-  const arrowLeft = document.querySelector('.arrow-left');
+let initCarousel = () => {
+    const arrowLeft = document.querySelector('.arrow-left');
   const arrowRight = document.querySelector('.arrow-right');
   const imgCarousel = document.querySelector('img');
   const indicators = document.querySelectorAll('.indicators > span');
-  const images = ['https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/treen_z0ezrx.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/sus_fsr0fd.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651805/users/illustrations/SEARCH_wjbuqv.png'];
+  const images = ['https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622639116/users/illustrations/flower.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622639142/users/illustrations/scientists.jpg', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622639127/users/illustrations/mobile.jpg', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622639115/users/illustrations/person.jpg'];
 
   const setAttr = (el, attr, value) => el.setAttribute(attr, value);
   const getAttr = (el, attr) => el.getAttribute(attr);
@@ -31,11 +16,11 @@
   };
 
   const getArrowLeftImageIndex = (currentIndex) => {
-    return currentIndex === 0 ? 2 : currentIndex - 1;
+    return currentIndex === 0 ? 3 : currentIndex - 1;
   };
 
   const getArrowRightImageIndex = (currentIndex) => {
-    return currentIndex === 2 ? 0 : currentIndex + 1;
+    return currentIndex === 3 ? 0 : currentIndex + 1;
   };
 
   const activateIndicator = (index) => {
@@ -89,4 +74,6 @@
   }
   setAttr(imgCarousel, 'src', images[newIndex]);
 });
-</script>
+};
+
+export {initCarousel};
