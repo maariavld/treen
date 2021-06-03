@@ -90,7 +90,7 @@ const initMapbox = () => {
     };
 
     all.onclick = function() {
-        food.className = '';
+        all.className = '';
         this.className = 'active';
         map.markerLayer.setFilter(function(f) {
             // Returning true for all markers shows everything.
