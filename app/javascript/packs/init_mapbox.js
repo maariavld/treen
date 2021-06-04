@@ -11,6 +11,14 @@ const initMapbox = () => {
   var secondHand = document.getElementById('filter-second-hand');
   var organic = document.getElementById('filter-organic');
 
+  const removeActive = () => {
+    const indicators = document.querySelectorAll('.mb-2 a');
+    indicators.forEach((el) => {
+    console.log(el);
+    el.classList.remove('active');
+    });
+  };
+
   const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
@@ -48,7 +56,7 @@ const initMapbox = () => {
     map.addControl(new mapboxgl.NavigationControl());
 
     vegan.onclick = function(e) {
-        all.className = '';
+        removeActive();
         this.className = 'active';
         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
           element.remove()
@@ -71,7 +79,7 @@ const initMapbox = () => {
     };
 
         good.onclick = function(e) {
-        all.className = '';
+        removeActive();
         this.className = 'active';
         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
           element.remove()
@@ -93,7 +101,7 @@ const initMapbox = () => {
         return false;
     };
     fairTrade.onclick = function(e) {
-        all.className = '';
+        removeActive();
         this.className = 'active';
         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
           element.remove()
@@ -115,7 +123,7 @@ const initMapbox = () => {
         return false;
     };
     co2.onclick = function(e) {
-      all.className = '';
+      removeActive();
       this.className = 'active';
       document.querySelectorAll('.mapboxgl-marker').forEach(element => {
         element.remove()
@@ -138,7 +146,7 @@ const initMapbox = () => {
     };
 
     organic.onclick = function(e) {
-      all.className = '';
+      removeActive();
       this.className = 'active';
       document.querySelectorAll('.mapboxgl-marker').forEach(element => {
         element.remove()
@@ -161,7 +169,7 @@ const initMapbox = () => {
     };
 
     secondHand.onclick = function(e) {
-      all.className = '';
+      removeActive();
       this.className = 'active';
       document.querySelectorAll('.mapboxgl-marker').forEach(element => {
         element.remove()
@@ -184,7 +192,7 @@ const initMapbox = () => {
     };
 
     all.onclick = function(e) {
-        all.className = '';
+        removeActive();
         this.className = 'active';
         markers.forEach((marker) => {
             const popup = new mapboxgl.Popup().setHTML(marker.info_window);
@@ -201,20 +209,20 @@ const initMapbox = () => {
 export { initMapbox };
 
 
-const imgFilter =document.querySelector('img');
-const indicators =document.querySelectorAll('.indicators > li');
-const getCurrentImageIndex = () => {
-  const currentImage = getAttr(imgFilter, 'src');
-  return getImageIndex(currentImage);
- };
-const activateIndicator = (index) => {
-  indicators.forEach((el, i) => {
-   if (el.classList.contains('active')) {
-    el.classList.remove('active')
-   };
-   if (index === i) el.classList.add('active');
-  })
- };
+// const imgFilter =document.querySelector('img');
+// const indicators =document.querySelectorAll('.indicators > li');
+// const getCurrentImageIndex = () => {
+//   const currentImage = getAttr(imgFilter, 'src');
+//   return getImageIndex(currentImage);
+//  };
+// const activateIndicator = (index) => {
+//   indicators.forEach((el, i) => {
+//    if (el.classList.contains('active')) {
+//     el.classList.remove('active')
+//    };
+//    if (index === i) el.classList.add('active');
+//   })
+//  };
 
 //  const indicators =document.querySelectorAll('.indicators > li');
 //  const activateIndicator = (index) => {
@@ -225,3 +233,5 @@ const activateIndicator = (index) => {
 //    if (index === i) el.classList.add('active');
 //   }),
 //  };
+
+
