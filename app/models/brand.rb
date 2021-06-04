@@ -12,9 +12,34 @@ class Brand < ApplicationRecord
     end
   end
 
-  def organic_value(x)
+  def good_cause
     self.brand_policies.any? do |bp|
-      bp.ranking >= x && bp.policy.title == 'Organic'
+      bp.ranking >= 3 && bp.policy.title == 'Good Cause'
     end
   end
+
+  def fair_trade
+    self.brand_policies.any? do |bp|
+      bp.ranking >= 4 && bp.policy.title == 'Fair Trade'
+    end
+  end
+
+  def co_2
+    self.brand_policies.any? do |bp|
+      bp.ranking >= 4 && bp.policy.title == 'Carbon Footprint'
+    end
+  end
+
+  def organic
+    self.brand_policies.any? do |bp|
+      bp.ranking >= 4 && bp.policy.title == 'Organic Fabrics'
+    end
+  end
+
+  def second_hand
+    self.brand_policies.any? do |bp|
+      bp.ranking >= 3 && bp.policy.title == 'Second Hand'
+    end
+  end
+
 end

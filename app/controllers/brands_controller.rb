@@ -14,8 +14,13 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
         lat: brand.latitude,
         lng: brand.longitude,
         info_window: render_to_string(partial: "info_window", locals: { brand: brand }),
-        vegan: brand.is_vegan?
-        # organic: brand.organic_value
+        vegan: brand.is_vegan?,
+        good: brand.good_cause,
+        fairTrade: brand.fair_trade,
+        co2: brand.co_2,
+        organic: brand.organic,
+        secondHand: brand.second_hand
+
       }
     end
   end

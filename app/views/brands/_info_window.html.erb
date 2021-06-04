@@ -1,7 +1,13 @@
+<% if false %>
 <%= link_to brand_path(brand) do %>
   <h2><%= brand.name %></h2>
   <p><%= brand.address %></p>
-  <img src="" alt="">
 <% end %>
 
 <%= cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fill %>
+<% end %>
+
+<%= link_to brand_path(brand) do %>
+  <%= cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fit %>
+  <p><%= brand.address %></p>
+<% end %>
