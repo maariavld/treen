@@ -1,10 +1,15 @@
 // Specific CSS for your home-page
+
 .skip-btn{
   text-decoration:none;
   color:black;
   position: absolute;
   bottom:20px;
   right:-250px;
+  &:hover{
+   text-decoration:none;
+     color:black;
+  }
 }
 .arrow {
   font-size: 51px;
