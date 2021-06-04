@@ -1,4 +1,4 @@
-.active{
+.cactive{
  background-color:rgb(4, 29, 28) !important;
  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
 }
@@ -27,7 +27,7 @@
   transition: transform .5s, opacity .5s, z-index .5s;
 }
 .carousel__photo.initial,
-.carousel__photo.active {
+.carousel__photo.cactive {
   opacity: 1;
   position: relative;
   z-index: 900;
