@@ -2,8 +2,7 @@
     <div class="arrow-left">
       <span class="arrow">&#x2039;</span>
     </div>
-    <%= cl_image_tag("https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/treen_z0ezrx.png",
-      width: 400, height: 300, crop: :fill) %>
+    <%= cl_image_tag("https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/treen_z0ezrx.png") %>
     <div class="arrow-right">
       <span class="arrow">&#x203A;</span>
     </div>
@@ -35,7 +34,7 @@
   };
 
   const getArrowRightImageIndex = (currentIndex) => {
-    return currentIndex === 2 ? 0 : currentIndex + 1;
+    return currentIndex === 2 ? -1 : currentIndex + 1;
   };
 
   const activateIndicator = (index) => {
@@ -82,6 +81,9 @@
   });
   arrowRight.addEventListener('click', (e) => {
     const newIndex = getArrowRightImageIndex(getCurrentImageIndex());
+    if (newIndex === -1){
+      window.location.href = "/brands";
+    }
     activateIndicator(newIndex);
 
     left && clearInterval(left);
