@@ -1,1 +1,1 @@
-<%= social_share_button_tag('I have discovered this sustainable brand {{@brand.name}}', url: 'https://treen-mv.herokuapp.com') '%>
+<%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %>
