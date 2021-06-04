@@ -47,7 +47,7 @@
     })
   };
 
-  const intervalSlider = (direction, delay = 5000) => {
+  const intervalSlider = (direction) => {
     let callback = null, getNewIndexFunc = null;
     if (direction === 'left') {
       getNewIndexFunc = () => getArrowLeftImageIndex(getCurrentImageIndex());
@@ -62,11 +62,12 @@
       setAttr(imgCarousel, 'src', images[newIndex]);
     }
 
-    return () => setInterval(callback, delay);
-  }
+    return () => callback;
+  };
 
   const leftInterval = intervalSlider('left');
   const rightInterval = intervalSlider('right');
+
 
   let left = null, right = null;
 
@@ -88,5 +89,5 @@
       right = rightInterval();
   }
   setAttr(imgCarousel, 'src', images[newIndex]);
-});
+  });
 </script>
