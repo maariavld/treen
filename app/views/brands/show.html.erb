@@ -1,5 +1,3 @@
-
-<%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %>
 <div class="container">
   <div class="row">
 
@@ -9,6 +7,10 @@
 </div>
 <br>
 <div class="container">
+  <div>
+    <h3>Share on</h3>
+    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %>
+  </div>
   <div class="row">
     <div class="col-12">
       <h1 class="mb-5"><%= @brand.name %></h1>
