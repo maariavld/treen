@@ -183,7 +183,7 @@ const initMapbox = () => {
         return false;
     };
 
-    all.onclick = function() {
+    all.onclick = function(e) {
         all.className = '';
         this.className = 'active';
         map.markerLayer.setFilter(function(f) {
