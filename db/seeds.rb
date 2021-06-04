@@ -41,11 +41,181 @@ puts "Created #{Policy.count} policies."
 
 puts "Creating brands..."
 
+file_secondella = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622756871/brands/secondella_ecaznf.png')
+secondella = Brand.new(
+      name: 'SECONDELLA',
+      address: 'Hohe Bleichen 5, 20354 Hamburg',
+      description: 'Designer, Second-Hand, Mode and Accessoires'
+)
+secondella.photo.attach(io: file_secondella, filename: 'secondella.png', content_type: 'image/png')
+secondella.save
+puts "Created brand #{secondella.id}. #{secondella.name}"
+puts "Creating #{secondella.name} \' policies..."
+secondella_second_hand = BrandPolicy.new(
+            brand_id: secondella.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+secondella_second_hand.save
+puts "Created #{secondella.name} #{second_hand.title}\'s policy."
+
+file_second_schanze = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622756807/brands/seconds_aotroe.png')
+second_schanze = Brand.new(
+      name: 'Second Schanze',
+      address: 'Weidenallee 54, 20357 Hamburg',
+      description: 'Small, elegant shop stocking second-hand designer apparel, shoes and handbags for women.'
+)
+second_schanze.photo.attach(io: file_second_schanze, filename: 'second_schanze.png', content_type: 'image/png')
+second_schanze.save
+puts "Created brand #{second_schanze.id}. #{second_schanze.name}"
+puts "Creating #{second_schanze.name} \' policies..."
+second_schanze_second_hand = BrandPolicy.new(
+            brand_id: second_schanze.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+second_schanze_second_hand.save
+puts "Created #{second_schanze.name} #{second_hand.title}\'s policy."
+
+file_fifty = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622758500/brands/FIFTY_z6rixi.png')
+fifty = Brand.new(
+      name: 'FIFTY:FIFTY',
+      address: 'Blankeneser Bahnhofstraße 7, 22587 Hamburg',
+      description: 'FIFTY: FIFTY combines luxury with the mentality of circular fashion. Vintage fashion and pre-owned are more than just a temporary trend!'
+)
+fifty.photo.attach(io: file_fifty, filename: 'fifty.png', content_type: 'image/png')
+fifty.save
+puts "Created brand #{fifty.id}. #{fifty.name}"
+puts "Creating #{fifty.name} \' policies..."
+fifty_second_hand = BrandPolicy.new(
+            brand_id: fifty.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+fifty_second_hand.save
+puts "Created #{fifty.name} #{second_hand.title}\'s policy."
+
+file_humana = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622756460/brands/humana-logo-dark_efwp6w.png')
+humana = Brand.new(
+      name: 'HUMANA',
+      address: 'Bremer Str. 2, 21073 Hamburg',
+      description: 'Inexpensive second-hand clothing for him and her. From casual wear to highly elegant, from traditional costume to totally trendy!'
+)
+humana.photo.attach(io: file_humana , filename: 'humana.png', content_type: 'image/png')
+humana.save
+puts "Created brand #{humana.id}. #{humana.name}"
+puts "Creating #{humana.name} \' policies..."
+humana_second_hand = BrandPolicy.new(
+            brand_id: humana.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+humana_second_hand.save
+puts "Created #{humana.name} #{second_hand.title}\'s policy."
+
+file_klamottensen = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622756283/brands/klamottensen_a0l0oi.png')
+klamottensen = Brand.new(
+      name: 'Klamottensen',
+      address: 'Kleine Rainstraße 6, 22765 Hamburg',
+      description: 'Klamottensen has selected second-hand clothing as well as delicious waffles and coffee on offer.'
+)
+klamottensen.photo.attach(io: file_klamottensen, filename: 'klamottensen.png', content_type: 'image/png')
+klamottensen.save
+puts "Created brand #{klamottensen.id}. #{klamottensen.name}"
+puts "Creating #{klamottensen.name} \' policies..."
+klamottensen_second_hand = BrandPolicy.new(
+            brand_id: klamottensen.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+klamottensen_second_hand.save
+puts "Created #{klamottensen.name} #{second_hand.title}\'s policy."
+
+file_knallbonbon = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622756283/brands/KNALLBONBON_hzwavp.png')
+knallbonbon = Brand.new(
+      name: 'Knallbonbon',
+      address: 'Wandsbeker Chaussee 259, 22089 Hamburg',
+      description: 'Cutting-edge second hand fashion at low prices'
+)
+knallbonbon.photo.attach(io: file_knallbonbon, filename: 'knallbonbon.png', content_type: 'image/png')
+knallbonbon.save
+puts "Created brand #{knallbonbon.id}. #{knallbonbon.name}"
+puts "Creating #{knallbonbon.name} \' policies..."
+knallbonbon_second_hand = BrandPolicy.new(
+            brand_id: knallbonbon.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+knallbonbon_second_hand.save
+puts "Created #{knallbonbon.name} #{second_hand.title}\'s policy."
+
+file_oxfam = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622757010/brands/gbgomZO-WPtKu0FIyido7FqdRl4LimwE_Nv-V-gLeCkR45zJ1zCWlnlULIMEc5DOa5rzoiFB4C9OUYXtq85iH8oePVEn9zdz5DvSV5dqn03TMG1ewy4nfEzYNaXKxnBWdvLfv1od0wTNH19CRb2glJEKB-A_vfalp2.png')
+oxfam = Brand.new(
+      name: 'Oxfam Shop',
+      address: 'Wandsbeker Marktstraße 10, 22041 Hamburg',
+      description: 'In the thrift stores Oxfam find a wide range of donated things - from clothing to books and media to household items. You are doing good with every purchase!'
+)
+oxfam.photo.attach(io: file_oxfam, filename: 'oxfam.png', content_type: 'image/png')
+oxfam.save
+puts "Created brand #{oxfam.id}. #{oxfam.name}"
+puts "Creating #{oxfam.name} \' policies..."
+oxfam_second_hand = BrandPolicy.new(
+            brand_id: oxfam.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+oxfam_second_hand.save
+puts "Created #{oxfam.name} #{second_hand.title}\'s policy."
+
+file_rudolf = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622757380/brands/rudolf_rvn5ip.png')
+rudolf = Brand.new(
+      name: 'Rudolf Beaufays Superior Vintage Style',
+      address: 'Büschstraße 9, 20354 Hamburg',
+      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.'
+)
+rudolf.photo.attach(io: file_rudolf, filename: 'rudolf.png', content_type: 'image/png')
+rudolf.save
+puts "Created brand #{rudolf.id}. #{rudolf.name}"
+puts "Creating #{rudolf.name} \' policies..."
+rudolf_second_hand = BrandPolicy.new(
+            brand_id: rudolf.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+rudolf_second_hand.save
+puts "Created #{rudolf.name} #{second_hand.title}\'s policy."
+
+file_hot_dogs = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622757506/brands/hotdogs_ubneck.png')
+hot_dogs = Brand.new(
+      name: 'Hot Dogs',
+      address: 'Marktstraße 38, 20357 Hamburg',
+      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.'
+)
+hot_dogs.photo.attach(io: file_hot_dogs, filename: 'hot_dogs.png', content_type: 'image/png')
+hot_dogs.save
+puts "Created brand #{hot_dogs.id}. #{hot_dogs.name}"
+puts "Creating #{hot_dogs.name} \' policies..."
+hot_dogs_second_hand = BrandPolicy.new(
+            brand_id: hot_dogs.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+hot_dogs_second_hand.save
+puts "Created #{hot_dogs.name} #{second_hand.title}\'s policy."
+
+file_jimmy = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622757771/brands/jimmy_kmfieg.png')
+jimmy = Brand.new(
+      name: 'Jimmy',
+      address: 'Schanzenstraße 5, 20357 Hamburg',
+      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.'
+)
+jimmy.photo.attach(io: file_jimmy, filename: 'jimmy.png', content_type: 'image/png')
+jimmy.save
+puts "Created brand #{jimmy.id}. #{jimmy.name}"
+puts "Creating #{jimmy.name} \' policies..."
+jimmy_second_hand = BrandPolicy.new(
+            brand_id: jimmy.id,
+            policy_id: second_hand.id,
+            ranking: 5 )
+jimmy_second_hand.save
+puts "Created #{jimmy.name} #{second_hand.title}\'s policy."
+
 file_kca = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622551160/brands/Logo_Knowledge_Cotton_Apparel_rxwvff.png')
 kca = Brand.new(
       name: 'Knowledge Cotton Apparel',
       address: 'Beim Schlump 9, 20144 Hamburg',
-      description: 'Acquire knowledge, take action, earn respect. By gaining knowledge Knowledge Cotton Apparel means that you first have to become aware of the problem. The clothing industry is often bad for the environment and for people, but not everyone is aware of how great this problem is. Knowledge Cotton Apparel is very aware of the problems and has taken considerable action.'
+      description: 'Jimmy Hamburg is the shop for the latest design, sustainable products and trends from all over the world. The range is completed with handmade shoes, wine, accessories and beautiful tableware from Italy.'
 )
 kca.photo.attach(io: file_kca, filename: 'knowledgecottonapparel.png', content_type: 'image/png')
 kca.save
