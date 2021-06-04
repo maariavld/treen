@@ -4,7 +4,17 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
 # before_action :skip_authorization, only: []
 
   def index
-    @brands = Brand.all
+   @policies = Policy.all
+    if params[:query].present?
+      sql_query = " \
+        brands.address ILIKE :query \
+        OR brands.name ILIKE :query \
+      "
+      @brands = Brand.where(sql_query, query: "%#{params[:query]}%")
+      # @brands = Brand.near(params[:query], 10)
+    else
+      @brands = Brand.all
+    end
     #@brands = policy_scope(Brand)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     # @markers = @flats.geocoded.map do |flat|
