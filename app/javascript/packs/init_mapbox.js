@@ -183,15 +183,45 @@ const initMapbox = () => {
         return false;
     };
 
-    all.onclick = function() {
+    all.onclick = function(e) {
         all.className = '';
         this.className = 'active';
-        map.markerLayer.setFilter(function(f) {
-            // Returning true for all markers shows everything.
-            return true;
+        markers.forEach((marker) => {
+            const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+            new mapboxgl.Marker()
+              .setLngLat([ marker.lng, marker.lat ])
+              .setPopup(popup)
+              .addTo(map);
         });
+        fitMapToMarkers(map, markers);
         return false;
     };
   }
 };
 export { initMapbox };
+
+
+const imgFilter =document.querySelector('img');
+const indicators =document.querySelectorAll('.indicators > li');
+const getCurrentImageIndex = () => {
+  const currentImage = getAttr(imgFilter, 'src');
+  return getImageIndex(currentImage);
+ };
+const activateIndicator = (index) => {
+  indicators.forEach((el, i) => {
+   if (el.classList.contains('active')) {
+    el.classList.remove('active')
+   };
+   if (index === i) el.classList.add('active');
+  })
+ };
+
+//  const indicators =document.querySelectorAll('.indicators > li');
+//  const activateIndicator = (index) => {
+//   indicators.forEach((el) => {
+//    el.classList.remove('active')) {
+//     el.classList.remove('active')
+//    };
+//    if (index === i) el.classList.add('active');
+//   }),
+//  };
