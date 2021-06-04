@@ -1,5 +1,12 @@
+<div class="container">
+  <div class="row">
 
-<div class="container margin-top-negative">
+      <img src="https://source.unsplash.com/collection/12277519/640x426" width=100%>
+
+  </div>
+</div>
+<br>
+<div class="container">
   <div class="row">
     <div class="col-12">
       <h1 class="mb-5"><%= @brand.name %></h1>
@@ -8,20 +15,17 @@
   </div>
 </div>
 <br>
-<div class="container margin-top-negative">
-  <div class="row">
-    <div class="col-12">
-      <div class="icon">
-        <a href="#" class ="icon"><%= image_tag "carbon-footprint.png", width: 50 %></a>
-        <a href="#" class ="icon"><%= image_tag "fair-trade.png", width: 40 %></a>
-        <a href="#" class ="icon"><%= image_tag "plant-based.png", width: 40 %></a>
-        <a href="#" class ="icon"><%= image_tag "solidarity.png", width: 40 %></a>
-      </div>
-    </div>
+<div class="container">
+  <div class="icon">
+    <%= image_tag "carbon-footprint.png", width: 50 %>
+    <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
+    <%= image_tag "fair-trade.png", width: 40 %>
+    <%= image_tag "plant-based.png", width: 40 %>
+    <%= image_tag "solidarity.png", width: 40 %>
   </div>
 </div>
 <br>
-<div class="container margin-top-negative">
+<div class="container">
   <h5>Reviews</h5>
     <div class="row">
       <div class="col-12">

@@ -5,17 +5,17 @@ body {
 h1, h5 {
   font-family: 'Inconsolata', monospace;
 
+img {
+
+}
+
 }
 
 .icon {
-    min-height: 20px;
-    max-width: 20px;
-    min-width: 20px;
-    border-width: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .text-muted {
@@ -25,7 +25,7 @@ h1, h5 {
 
 .form {
 padding-bottom: 200px;
-z-index: 0;
+
 }
 
 .btn {
@@ -41,6 +41,8 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
+
+
 .reviews {
   display: flex;
   flex-direction: column;
