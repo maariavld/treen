@@ -12,11 +12,10 @@
   </head>
 
   <body>
-
-<% unless controller_name == "brands" && action_name == "index" %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+<!--     <%# unless controller_name == "brands" && action_name == "index" %>
+      <p class="notice"><%#= notice %></p>
+      <p class="alert"><%#= alert %></p>
+    <%# end %> -->
     <%= yield %>
     <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
   </body>
