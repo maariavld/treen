@@ -6,7 +6,6 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
   def index
     @brands = Brand.all
     #@brands = policy_scope(Brand)
-
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     # @markers = @flats.geocoded.map do |flat|
     @markers = @brands.geocoded.map do |brand|
