@@ -1,50 +1,90 @@
 <div class="container">
   <div class="row">
-
       <img src="https://source.unsplash.com/collection/12277519/640x426" width=100%>
-
-  </div>
-</div>
-<br>
-<div class="container">
-  <div>
-    <h3>Share on</h3>
-    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h1 class="mb-5"><%= @brand.name %></h1>
-      <p class="text-muted"><%= @brand.description %></p>
     </div>
   </div>
-</div>
-<br>
-<div class="container">
-  <div class="icon">
-    <%= image_tag "carbon-footprint.png", width: 50 %>
-    <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
-    <%= image_tag "fair-trade.png", width: 40 %>
-    <%= image_tag "plant-based.png", width: 40 %>
-    <%= image_tag "solidarity.png", width: 40 %>
-  </div>
-</div>
-<br>
-<div class="container">
-  <h5>Reviews</h5>
-    <div class="row">
-      <div class="col-12">
-        <div class="text-muted">
-          <% @brand_reviews.each do |review| %>
-            <div class= "reviews"><%= review.content %></div>
-            <hr/>
-           <!--  <tr>
-                <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
-                <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-            </tr> -->
-          <% end %>
+  <br>
+  <div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="title">
+          <h1><%= @brand.name %></h1>
+          <p><%= @average_reviews %></p>
         </div>
+  <p> <%= @brand.address %></p>
+  <div class="container">
+    <div class="icon">
+      <% @brand_policies.each do |brand|  %>
+        <% if brand.policy.title == "Vegan" %>
+         <%= image_tag "fair-trade.png", width: 40 %>
+               <%= brand.ranking  %>
+        <% elsif  brand.policy.title == "Carbon Footprint" %>
+         <%= image_tag "carbon-footprint.png", width: 50 %>
+          <%= brand.ranking  %>
+        <% elsif  brand.policy.title == "Fair Trade" %>
+         <%= image_tag "fair-trade.png", width: 40 %>
+          <%= brand.ranking  %>
+        <% elsif  brand.policy.title == "Organic Fabrics" %>
+         <%= image_tag "plant-based.png", width: 40 %>
+          <%= brand.ranking  %>
+        <% elsif  brand.policy.title == "Good Cause" %>
+         <%= image_tag "solidarity.png", width: 40 %>
+          <%= brand.ranking  %>
+        <% else  brand.policy.title == "Second Hand" %>
+         <%= image_tag "carbon-footprint.png", width: 50 %>
+          <%= brand.ranking  %>
+        <% end %>
+      <% end %>
       </div>
     </div>
-</div>
+
+  <div class="social">
+        <p>Share on</p><a class="social-btn">
+        <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %></a>
+  </div>
+  <br>
+        <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
+  <br>
+  <p class="text-muted"><%= @brand.description %></p>
+  <div>
+    <h5>Reviews</h5>
+  </div>
+  <div class="text-muted">
+    <% @brand_reviews.each do |review| %>
+      <div class= "reviews"><%= "⭐" * review.rating %></div>
+      <div><%= review.content %></div>
+       <!--  <tr>
+            <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
+            <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        </tr> -->
+      <% end %>
+  </div>
 <br>
-<%=render 'shared/reviewform' %>
+<a class="trigger_popup_fricc">Add my review</a>
+<div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <div class="popupCloseButton">&times;</div>
+         <%= simple_form_for [ @brand, @review ] do |f| %>
+        <%= f.input :content, placeholder: 'Add your review here...' %>
+        <%= f.input :rating, as: :select, collection: (1..5).to_a, label: "Rate your experience" %>
+        <br>
+        <%= f.submit "Submit review", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+      </div>
+</div>
+  <%#=render 'shared/reviewform' %>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+</script>

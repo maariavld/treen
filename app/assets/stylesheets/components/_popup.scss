@@ -54,13 +54,13 @@
     color: rgb(221, 110, 66);
 }
 .trigger_popup_fricc {
-    position: absolute;
+    padding:7px;
+    background-color: #d9ae94;
+    color: black;
     bottom: 50px;
     right: 173px;
     z-index: 100;
     cursor: pointer;
-    font-size: 20px;
-    display: inline-block;
-    font-weight: bold;
+    font-size: 12px;
 }
 /* Popup box BEGIN */

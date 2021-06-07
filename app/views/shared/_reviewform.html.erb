@@ -3,7 +3,9 @@
     <div class="col-12">
       <div class="form">
         <%= simple_form_for [ @brand, @review ] do |f| %>
-        <%= f.input :content %>
+        <%= f.input :content, placeholder: 'Add your review here...' %>
+        <%= f.input :rating, as: :select, collection: (1..5).to_a, label: "Rate your experience" %>
+        <br>
         <%= f.submit "Submit review", class: "btn btn-primary" %>
         <% end %>
       </div>

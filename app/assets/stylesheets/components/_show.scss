@@ -1,14 +1,30 @@
 body {
-  background: #d8e2dc;
+  background: white;
 }
 
 h1, h5 {
   font-family: 'Inconsolata', monospace;
-
-img {
-
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
+.social {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F3E8D7;
+}
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
 }
 
 .icon {
@@ -21,6 +37,11 @@ img {
 .text-muted {
 
   text-align: justify;
+}
+
+.submitreview {
+  color: black;
+  background-color: #d9ae94;
 }
 
 .form {

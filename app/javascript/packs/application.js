@@ -24,6 +24,10 @@ ActiveStorage.start()
 import "bootstrap";
 import { initMapbox } from "./init_mapbox";
 import 'social-share-button';
+// Stars rating
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
