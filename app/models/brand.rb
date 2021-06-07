@@ -8,7 +8,7 @@ class Brand < ApplicationRecord
 
   def is_vegan?
     self.brand_policies.any? do |bp|
-      bp.ranking >= 1 && bp.policy.title == 'Vegan'
+      bp.ranking >= 3 && bp.policy.title == 'Vegan'
     end
   end
 

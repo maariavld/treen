@@ -4,7 +4,7 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
 # before_action :skip_authorization, only: []
 
   def index
-   @policies = Policy.all
+    @policies = Policy.all
     if params[:query].present?
       sql_query = " \
         brands.address ILIKE :query \
@@ -29,7 +29,6 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
         co2: brand.co_2,
         organic: brand.organic,
         secondHand: brand.second_hand
-
       }
     end
   end

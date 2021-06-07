@@ -3,9 +3,9 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<%# <a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a> %>
+<a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a>
 
-<!-- <div class="hover_bkgr_fricc">
+<div class="hover_bkgr_fricc">
     <span class="helper"></span>
     <div>
         <div class="popupCloseButton">&times;</div>
@@ -20,7 +20,7 @@
          </ul>
         </div>
       </div>
-</div> -->
+</div>
 <div id='map-ui'>
     <ul>
         <li class="mb-2"><a href='#' id='filter-vegan'><%= image_tag 'https://www.pinclipart.com/picdir/big/175-1754142_hot-food-organic-pepper-chili-vegetarian-vegan-vegetarian.png', style: 'height:30px;width:30px' %></a></li>
@@ -32,7 +32,7 @@
         <li class="mb-2"><a href='#' id='filter-second-hand'><%= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:30px;width:30px' %></a></li>
     </ul>
 </div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
   $(window).load(function () {
     $(".trigger_popup_fricc").click(function(){
@@ -45,4 +45,4 @@
         $('.hover_bkgr_fricc').hide();
     });
 });
-</script> -->
+</script>
