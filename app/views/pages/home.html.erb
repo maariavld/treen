@@ -7,7 +7,7 @@
       <span class="arrow">&#x203A;</span>
     </div>
     <div class="indicators">
-      <span class="active"><%= link_to brands_path, class:'skip-btn' do %>skip<i class="fas fa-chevron-right"></i><% end %></span>
+      <span class="cactive"><%= link_to brands_path, class:'skip-btn' do %>skip<i class="fas fa-chevron-right"></i><% end %></span>
       <span></span>
       <span></span>
     </div>
@@ -39,10 +39,10 @@
 
   const activateIndicator = (index) => {
     indicators.forEach((el, i) => {
-      if (el.classList.contains('active')) {
-        el.classList.remove('active')
+      if (el.classList.contains('cactive')) {
+        el.classList.remove('cactive')
       };
-      if (index === i) el.classList.add('active');
+      if (index === i) el.classList.add('cactive');
     })
   };
 
