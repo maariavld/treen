@@ -12,22 +12,17 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <% unless controller_name == "brands" && action_name == "index" %>
-=======
 
 <% unless controller_name == "brands" && action_name == "index" %>
->>>>>>> b6ce93e511963942e547e982a8dace78bc888ff7
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <% end %>
-=======
+
 <!--     <%# unless controller_name == "brands" && action_name == "index" %>
       <p class="notice"><%#= notice %></p>
       <p class="alert"><%#= alert %></p>
     <%# end %> -->
->>>>>>> c38d878a3f59f5826b7a0a6355920e67f65f4a40
+
     <%= yield %>
     <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
   </body>
