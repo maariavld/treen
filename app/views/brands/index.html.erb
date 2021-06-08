@@ -3,6 +3,7 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
 <!-- <%# <a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a> %> -->
 <div class = "banner">
   <div>
@@ -21,9 +22,14 @@
 
 <%# <a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a>
 
-<!-- <div class="hover_bkgr_fricc">
+<%# <a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a>
+
+<a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a>
+
+<div class="hover_bkgr_fricc">
     <span class="helper"></span>
     <div>
+        <% if false %>
         <div class="popupCloseButton">&times;</div>
           <ul class="badge_icons mt-3">
             <li class="mb-2"><a href='#' id='filter-all'><%#= image_tag 'https://i.pinimg.com/originals/ff/57/7a/ff577abcece6041ac716068c1a449c72.png', style: 'height:40px;width:40px' %></a></li>
@@ -34,11 +40,38 @@
             <li class="mb-2"><a href='#' id='filter-organic'><%#= image_tag 'https://image.flaticon.com/icons/png/512/25/25091.png', style: 'height:40px;width:40px' %></a></li>
             <li><a href='#' id='filter-second-hand'><%#= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:40px;width:40px' %></a></li>
          </ul>
+         </div>
+        <% end %>
+        <div>
+          <%= form_with url: "/brands", method: :get do |form| %>
+            <%= form.label :good, "good cause" %>
+            <%= form.range_field :good, in: 1..5 %>
+            <%= form.label :fair, "fair trade" %>
+            <%= form.range_field :fair, in: 1..5 %>
+            <%= form.label :co2, "carbon footprint" %>
+            <%= form.range_field :co2, in: 1..5 %>
+            <%= form.label :organic, "organic fabrics" %>
+            <%= form.range_field :organic, in: 1..5 %>
+            <br>
+            <%= form.label :vegan, "vegan" %>
+            <%= form.check_box :vegan, class: "className className2" %>
+            <br>
+            <%= form.submit "Search" %>
+          <% end %>
+        </div>
+        <div>
+          <%= form_with url: "/brands", method: :get do |form| %>
+            <br>
+            <%= form.label :hand2, "2nd hand" %>
+            <%= form.check_box :hand2 %>
+            <br>
+            <%= form.submit "Search" %>
+          <% end %>
         </div>
       </div>
-</div> -->
+</div>
 <div id='map-ui'>
-    <ul>
+      <ul>
         <li class="mb-2"><a href='#' id='filter-vegan'><%= image_tag 'https://www.pinclipart.com/picdir/big/175-1754142_hot-food-organic-pepper-chili-vegetarian-vegan-vegetarian.png', style: 'height:30px;width:30px' %></a></li>
         <li class="mb-2"><a href='#' id='filter-all'><%= image_tag 'https://i.pinimg.com/originals/ff/57/7a/ff577abcece6041ac716068c1a449c72.png', style: 'height:30px;width:30px' %></a></li>
         <li class="mb-2"><a href='#' id='filter-good-cause'><%= image_tag 'https://img.icons8.com/ios/452/charity.png', style: 'height:30px;width:30px' %></a></li>
@@ -46,19 +79,5 @@
         <li class="mb-2"><a href='#' id='filter-co-2'><%= image_tag 'https://cdn1.iconfinder.com/data/icons/eco-food-and-cosmetic-labels/128/Artboard_63-2-512.png', style: 'height:30px;width:30px' %></a></li>
         <li class="mb-2"><a href='#' id='filter-organic'><%= image_tag 'https://image.flaticon.com/icons/png/512/25/25091.png', style: 'height:30px;width:30px' %></a></li>
         <li class="mb-2"><a href='#' id='filter-second-hand'><%= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:30px;width:30px' %></a></li>
-    </ul>
+      </ul>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(window).load(function () {
-    $(".trigger_popup_fricc").click(function(){
-       $('.hover_bkgr_fricc').show();
-    });
-    $('.hover_bkgr_fricc').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-    $('.popupCloseButton').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-});
-</script>

@@ -20,7 +20,7 @@
     box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.2);
     display: inline-block;
     width: 220px;
-    height: 220px;
+    height: 400px;
     vertical-align: middle;
     position: relative;
     border-radius: 8px;
@@ -59,6 +59,8 @@
     background-color: #d9ae94;
     color: black;
     bottom: 50px;
+    position: absolute;
+    bottom: 100px;
     right: 173px;
     z-index: 100;
     cursor: pointer;

@@ -24,10 +24,14 @@ ActiveStorage.start()
 import "bootstrap";
 import { initMapbox } from "./init_mapbox";
 import 'social-share-button';
+<<<<<<< HEAD
 // Stars rating
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+
+import { Popup } from "mapbox-gl";
+import { initPop } from "./popup";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   // initCarousel();
   initMapbox();
+  initPop();
 });
