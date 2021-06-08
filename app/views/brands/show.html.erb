@@ -1,50 +1,84 @@
 <div class="container">
   <div class="row">
-
       <img src="https://source.unsplash.com/collection/12277519/640x426" width=100%>
+  </div>
+  <br>
+    <div class="title d-flex">
+      <h1><%= @brand.name %></h1>
+      <p><%= @average_reviews %></p>
+    </div>
+  <p> <%= @brand.address %></p>
+    <div class="icon">
+        <% @brand_policies.each do |brand|  %>
+        <% if brand.policy.title == "Vegan" %>
+          <div class="brand-policy-icon">
+            <%= image_tag "vegan-badge.png", width:50 %>
+            <span class="badge badge-secondary" ><%= brand.ranking  %></span>
+          </div>
+        <% elsif  brand.policy.title == "Carbon Footprint" %>
+          <div class="brand-policy-icon">
+            <%= image_tag "co2_badge.png", width:50 %>
+            <span class="badge badge-secondary" ><%= brand.ranking  %></span>
+          </div>
+        <% elsif  brand.policy.title == "Fair Trade" %>
+          <div class="brand-policy-icon">
+            <%= image_tag "fair-trade.png", width:50 %>
+            <span class="badge badge-secondary" ><%= brand.ranking  %></span>
+          </div>
+        <% elsif  brand.policy.title == "Organic Fabrics" %>
+          <div class="brand-policy-icon">
+            <%= image_tag "organic-badge.png", width:50 %>
+            <span class="badge badge-secondary"><%= brand.ranking  %></span>
+          </div>
+        <% elsif  brand.policy.title == "Good Cause" %>
+          <div class="brand-policy-icon">
+            <%= image_tag "good-badge.png", width:50 %>
+            <span class="badge badge-secondary" ><%= brand.ranking  %></span>
+          </div>
+        <% elsif  brand.policy.title == "Second Hand" %>
+          <div class="brand-policy-icon">
+            <%= image_tag "second-hand-badge.png", width:50 %>
+            <span class="badge badge-secondary" ><%= brand.ranking  %></span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
-  </div>
-</div>
 <br>
-<div class="container">
-  <div>
-    <h3>Share on</h3>
-    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %>
+  <div class="social">
+    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %></a>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <h1 class="mb-5"><%= @brand.name %></h1>
-      <p class="text-muted"><%= @brand.description %></p>
-    </div>
+    <!-- <div>
+      <p class="twitter">Share on</p>
+      <p class="facebook">Share on</p>
+    </div> -->
+
+        <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
+
+  <p class="text-muted"><%= @brand.description %></p>
+  <div class="reviewform">
+    <h5>Reviews</h5>
+    <%=render 'shared/reviewform' %>
   </div>
-</div>
-<br>
-<div class="container">
-  <div class="icon">
-    <%= image_tag "carbon-footprint.png", width: 50 %>
-    <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
-    <%= image_tag "fair-trade.png", width: 40 %>
-    <%= image_tag "plant-based.png", width: 40 %>
-    <%= image_tag "solidarity.png", width: 40 %>
-  </div>
-</div>
-<br>
-<div class="container">
-  <h5>Reviews</h5>
-    <div class="row">
-      <div class="col-12">
-        <div class="text-muted">
-          <% @brand_reviews.each do |review| %>
-            <div class= "reviews"><%= review.content %></div>
-            <hr/>
-           <!--  <tr>
-                <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
-                <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-            </tr> -->
-          <% end %>
+  <div class="text-muted mb-5">
+    <div class="reviews d-flex">
+      <% @brand_reviews.each do |review| %>
+        <div class="stars">
+        <% review.rating.times do %>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <% end %>
+                <% (5- review.rating).times do %>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                <% end %>
+        <p><%= review.content %></p>
+         <!--  <tr>
+              <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
+              <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          </tr> -->
         </div>
-      </div>
+      <% end %>
     </div>
+  </div>
 </div>
-<br>
-<%=render 'shared/reviewform' %>
+
+
