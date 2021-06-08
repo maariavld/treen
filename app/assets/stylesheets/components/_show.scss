@@ -3,7 +3,8 @@ body {
 }
 
 h1, h5 {
-  font-family: 'Roboto';
+  font-family: 'Open Sans';
+
 }
 .title {
   display: flex;
@@ -13,7 +14,7 @@ h1, h5 {
 }
 
 p {
-font-family: 'Open Sans';
+font-family: 'Montserrat', sans-serif;
 }
 
 .icon {
@@ -39,7 +40,7 @@ padding-bottom: 200px;
 }
 
 .btn {
-  background-color: #d9ae94;
+  background-color: #F3E8D7;
   border: none;
 }
 
@@ -56,10 +57,27 @@ padding-bottom: 200px;
 .reviewform {
   display:flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .stars {
-  display: flex;
+  min-width: 50%;
+  width:50%;
   justify-content: space-between;
   align-items: center;
+  margin: 10px;
+
+  p {
+    background-color: #F3E8D7;
+    padding: 10px;
+  }
+
+  i {
+  color: #e9c46a;
+  }
+}
+
+.reviews {
+  margin-bottom: 80px;
+  overflow-x: scroll;
 }

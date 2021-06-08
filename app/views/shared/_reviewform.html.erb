@@ -1,9 +1,9 @@
 
-<a class="trigger_popup_fricc">Add my review</a>
-<div class="hover_bkgr_fricc">
+<a class="trigger_popup_review margin-80">Add my review</a>
+<div class="hover_bkgr_review">
     <span class="helper"></span>
     <div>
-        <div class="popupCloseButton">&times;</div>
+        <div class="popupReviewCloseButton">&times;</div>
          <%= simple_form_for [ @brand, @review ] do |f| %>
         <%= f.input :content, placeholder: 'Add your review here...' %>
         <%= f.input :rating, as: :select, collection: (1..5).to_a, label: "Rate your experience" %>
@@ -12,17 +12,6 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(window).load(function () {
-    $(".trigger_popup_fricc").click(function(){
-       $('.hover_bkgr_fricc').show();
-    });
-    $('.popupCloseButton').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-});
-</script>
 
 <!-- <div class="container margin-top-negative">
   <div class="row">
