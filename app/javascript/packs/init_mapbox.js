@@ -12,7 +12,7 @@ const initMapbox = () => {
   var organic = document.getElementById('filter-organic');
 
   const removeActive = () => {
-    const indicators = document.querySelectorAll('.mb-2 a');
+    const indicators = document.querySelectorAll('.mb-2');
     indicators.forEach((el) => {
     console.log(el);
     el.classList.remove('active');
@@ -56,6 +56,7 @@ const initMapbox = () => {
     );
 
     map.addControl(new mapboxgl.NavigationControl());
+
 
 //     vegan.onclick = function(e) {
 //         removeActive();
