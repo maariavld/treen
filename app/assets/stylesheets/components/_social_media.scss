@@ -6,5 +6,54 @@ $size: 30px;
     background-size: $size $size;
     height: $size;
     width: $size;
+
   }
 }
+.badge-secondary {
+  background-color: #E7D8C3!important;
+
+}
+
+
+.brand-policy-icon {
+  width: 40px;
+  position: relative;
+      span {
+        position: absolute;
+        bottom: -12px;
+        right: 8px;
+        color: black;
+    }
+}
+
+
+.social-share-button {
+
+  display: flex;
+  // flex-direction: column;
+
+
+  .ssb-facebook{
+    background-image: url("facebook.png");
+    padding:20px;
+    border-radius: 5px;
+    background-color: #E7D6BB;
+
+  }
+  .ssb-twitter{
+    background-image: url("twitter.png");
+    padding:20px;
+    border-radius: 5px;
+    background-color: #E7D6BB;
+  }
+}
+
+.social {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: #F3E8D7;
+  // flex-direction: row;
+
+}
+

@@ -1,13 +1,29 @@
-<div class="container margin-top-negative">
+
+<a class="trigger_popup_review margin-80">Add my review</a>
+<div class="hover_bkgr_review">
+    <span class="helper"></span>
+    <div>
+        <div class="popupReviewCloseButton">&times;</div>
+         <%= simple_form_for [ @brand, @review ] do |f| %>
+        <%= f.input :content, placeholder: 'Add your review here...' %>
+        <%= f.input :rating, as: :select, collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= f.submit "Submit review", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
+
+
+<!-- <div class="container margin-top-negative">
   <div class="row">
     <div class="col-12">
       <div class="form">
-        <%= simple_form_for [ @brand, @review ] do |f| %>
-        <%= f.input :content %>
-        <%= f.submit "Submit review", class: "btn btn-primary" %>
-        <% end %>
+        <%#= simple_form_for [ @brand, @review ] do |f| %>
+        <%#= f.input :content, placeholder: 'Add your review here...' %>
+        <%#= f.input :rating, as: :select, collection: (1..5).to_a, label: "Rate your experience" %>
+        <br>
+        <%#= f.submit "Submit review", class: "btn btn-primary" %>
+        <% #end %>
       </div>
     </div>
   </div>
- </div>
-
+ </div> -->

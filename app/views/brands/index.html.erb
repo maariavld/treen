@@ -3,7 +3,9 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
 <div class = "banner-search">
+
   <div>
     <%= form_tag brands_path, method: :get do %>
       <%= text_field_tag :query,
@@ -76,3 +78,4 @@
       </ul>
 </div>
      <% end %>
+

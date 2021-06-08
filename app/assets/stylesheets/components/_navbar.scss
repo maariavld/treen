@@ -1,14 +1,15 @@
 .navbar {
   justify-content: space-between;
-  background-color: white;
+  background-color: #F3E8D7;
   overflow: hidden;
   position: fixed;
-  bottom: 0;
   width: 100vw;
   height: 8%;
   z-index: 1;
+  bottom: 0;
 }
-.fas {
+
+a {
   color: #cfd2cd;
   margin-right: 20px;
   margin-left: 20px;

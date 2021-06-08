@@ -36,7 +36,9 @@ const initMapbox = () => {
 
     markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({
+          color: "#BCA788",
+        })
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
@@ -55,8 +57,171 @@ const initMapbox = () => {
 
     map.addControl(new mapboxgl.NavigationControl());
 
-    // s
-  }
+
+//     vegan.onclick = function(e) {
+//         removeActive();
+//         this.className = 'active';
+//         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+//           element.remove()
+//         });
+//         // The setFilter function takes a GeoJSON feature object
+//         // and returns true to show it or false to hide it.
+//         markers.filter(function(f) {
+//           // console.log(f);
+//           return f.vegan;
+//         }).forEach((marker) => {
+//         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//         new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//         .setLngLat([ marker.lng, marker.lat ])
+//         .setPopup(popup)
+//         .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+
+//         return false;
+//     };
+
+//         good.onclick = function(e) {
+//         removeActive();
+//         this.className = 'active';
+//         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+//           element.remove()
+//         });
+//         // The setFilter function takes a GeoJSON feature object
+//         // and returns true to show it or false to hide it.
+//         markers.filter(function(f) {
+//           // console.log(f);
+//           return f.good;
+//         }).forEach((marker) => {
+//         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//         new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//         .setLngLat([ marker.lng, marker.lat ])
+//         .setPopup(popup)
+//         .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+
+//         return false;
+//     };
+//     fairTrade.onclick = function(e) {
+//         removeActive();
+//         this.className = 'active';
+//         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+//           element.remove()
+//         });
+//         // The setFilter function takes a GeoJSON feature object
+//         // and returns true to show it or false to hide it.
+//         markers.filter(function(f) {
+//           // console.log(f);
+//           return f.fairTrade;
+//         }).forEach((marker) => {
+//         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//         new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//         .setLngLat([ marker.lng, marker.lat ])
+//         .setPopup(popup)
+//         .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+
+//         return false;
+//     };
+//     co2.onclick = function(e) {
+//       removeActive();
+//       this.className = 'active';
+//       document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+//         element.remove()
+//       });
+//         // The setFilter function takes a GeoJSON feature object
+//         // and returns true to show it or false to hide it.
+//         markers.filter(function(f) {
+//           // console.log(f);
+//           return f.co2;
+//         }).forEach((marker) => {
+//         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//         new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//           .setLngLat([ marker.lng, marker.lat ])
+//           .setPopup(popup)
+//           .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+
+//         return false;
+//     };
+
+//     organic.onclick = function(e) {
+//       removeActive();
+//       this.className = 'active';
+//       document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+//         element.remove()
+//       });
+//         // The setFilter function takes a GeoJSON feature object
+//         // and returns true to show it or false to hide it.
+//         markers.filter(function(f) {
+//           // console.log(f);
+//           return f.organic;
+//         }).forEach((marker) => {
+//           const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//           new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//           .setLngLat([ marker.lng, marker.lat ])
+//           .setPopup(popup)
+//           .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+
+//         return false;
+//     };
+
+//     secondHand.onclick = function(e) {
+//       removeActive();
+//       this.className = 'active';
+//       document.querySelectorAll('.mapboxgl-marker').forEach(element => {
+//         element.remove()
+//       });
+//         // The setFilter function takes a GeoJSON feature object
+//         // and returns true to show it or false to hide it.
+//         markers.filter(function(f) {
+//           // console.log(f);
+//           return f.secondHand;
+//         }).forEach((marker) => {
+//           const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//           new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//           .setLngLat([ marker.lng, marker.lat ])
+//           .setPopup(popup)
+//           .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+
+//         return false;
+//     };
+
+//     all.onclick = function(e) {
+//         removeActive();
+//         this.className = 'active';
+//         markers.forEach((marker) => {
+//             const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+//             new mapboxgl.Marker({
+//           color: "#BCA788",
+//         })
+//               .setLngLat([ marker.lng, marker.lat ])
+//               .setPopup(popup)
+//               .addTo(map);
+//         });
+//         fitMapToMarkers(map, markers);
+//         return false;
+//     };
+ }
 };
 export { initMapbox };
 

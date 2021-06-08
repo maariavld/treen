@@ -1,14 +1,20 @@
 body {
-  background: #d8e2dc;
+  background: white;
 }
 
 h1, h5 {
-  font-family: 'Inconsolata', monospace;
-
-img {
+  font-family: 'Open Sans';
 
 }
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
+p {
+font-family: 'Montserrat', sans-serif;
 }
 
 .icon {
@@ -23,30 +29,55 @@ img {
   text-align: justify;
 }
 
+.submitreview {
+  color: black;
+  background-color: #d9ae94;
+}
+
 .form {
 padding-bottom: 200px;
 
 }
 
 .btn {
-  background-color: #d9ae94;
+  background-color: #F3E8D7;
   border: none;
 }
 
-hr {
-    display: block;
-    height: 3px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+// hr {
+//     display: block;
+//     height: 3px;
+//     border: 0;
+//     border-top: 1px solid #ccc;
+//     margin: 1em 0;
+//     padding: 0;
+// }
+
+
+.reviewform {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.stars {
+  min-width: 50%;
+  width:50%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+
+  p {
+    background-color: #F3E8D7;
+    padding: 10px;
+  }
+
+  i {
+  color: #e9c46a;
+  }
+}
 
 .reviews {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 10px;
-  padding: 10px
+  margin-bottom: 80px;
+  overflow-x: scroll;
 }
