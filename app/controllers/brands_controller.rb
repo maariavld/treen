@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:index, :show] #device: no need to sign in
+skip_before_action :authenticate_user!, only: [:index, :show, :new, :create] #device: no need to sign in
 # before_action :skip_policy_scope, only: [:index] #pundit: no need to check if authorized
 # before_action :skip_authorization, only: []
 
@@ -35,8 +35,29 @@ skip_before_action :authenticate_user!, only: [:index, :show] #device: no need t
   end
 
   def show
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find(user_id:params[current_user.id])
     @review = Review.new
     @brand_reviews = @brand.reviews
+  end
+
+  def new
+    @brand = Brand.new
+  end
+
+  def create
+    @brand = Brand.new(brand_params)
+    @brand.user_id = current_user.id
+    @brand.status = "Pending"
+    if @brand.save
+      redirect_to dashboard_path(current_user)
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def brand_params
+    params.require(:brand).permit(:name, :address, :description, :status, :photo)
   end
 end
