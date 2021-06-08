@@ -3,11 +3,23 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<a class="trigger_popup_fricc"><%= image_tag "setting-lines.png", width: 30 %></a>
+<div class = "banner-search">
+  <div>
+    <%= form_tag brands_path, method: :get do %>
+      <%= text_field_tag :query,
+                         params[:query],
+                         class: "search-input",
+                         placeholder: "Enter an address"
+      %>
+      <% end %>
+    </div>
+</div>
+<a class="trigger_popup_fricc"><i class="fas fa-chevron-down"></i></a>
 
 <div class="hover_bkgr_fricc">
     <span class="helper"></span>
     <div>
+      <div class="popupCloseButton">&times;</div>
         <% if false %>
         <div class="popupCloseButton">&times;</div>
           <ul class="badge_icons mt-3">
@@ -21,34 +33,37 @@
          </ul>
          </div>
         <% end %>
-        <div>
+        <div class="sliders">
           <%= form_with url: "/brands", method: :get do |form| %>
-            <%= form.label :good, "good cause" %>
-            <%= form.range_field :good, in: 1..5 %>
+            <%= cl_image_tag “DownArrow.jpg” %>
+            <%= form.label :good, "Good Cause" %>
+            <%= form.range_field :good, in: 1..5,class: 'filter-good-cause mb-2', id:'filter-good-cause'%>
             <%= form.label :fair, "fair trade" %>
-            <%= form.range_field :fair, in: 1..5 %>
+            <%= form.range_field :fair, in: 1..5,class: 'filter-fair-trade mb-2', id:'filter-fair-trade'%>
             <%= form.label :co2, "carbon footprint" %>
-            <%= form.range_field :co2, in: 1..5 %>
+            <%= form.range_field :co2, in: 1..5,class: 'filter-co-2 mb-2',id:'filter-co-2'%>
             <%= form.label :organic, "organic fabrics" %>
-            <%= form.range_field :organic, in: 1..5 %>
+            <%= form.range_field :organic, in: 1..5, class: 'filter-organic mb-2', id:'filter-organic'%>
             <br>
             <%= form.label :vegan, "vegan" %>
-            <%= form.check_box :vegan, class: "className className2" %>
+            <%= form.check_box :vegan, class: 'filter-vegan mb-2',id:'filter-vegan' %>
             <br>
             <%= form.submit "Search" %>
           <% end %>
         </div>
-        <div>
+        <div class="onoff">
           <%= form_with url: "/brands", method: :get do |form| %>
             <br>
             <%= form.label :hand2, "2nd hand" %>
-            <%= form.check_box :hand2 %>
+            <%= form.check_box :hand2, class: 'mb-2', id:'filter-second-hand' %>
             <br>
             <%= form.submit "Search" %>
           <% end %>
         </div>
+        </div>
       </div>
 </div>
+      <% if false %>
 <div id='map-ui'>
       <ul>
         <li class="mb-2"><a href='#' id='filter-vegan'><%= image_tag 'https://www.pinclipart.com/picdir/big/175-1754142_hot-food-organic-pepper-chili-vegetarian-vegan-vegetarian.png', style: 'height:30px;width:30px' %></a></li>
@@ -60,3 +75,4 @@
         <li class="mb-2"><a href='#' id='filter-second-hand'><%= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:30px;width:30px' %></a></li>
       </ul>
 </div>
+     <% end %>
