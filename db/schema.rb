@@ -72,10 +72,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_165619) do
 
   create_table "ratings", force: :cascade do |t|
     t.bigint "review_id", null: false
-    t.integer "carbon_footprint"
-    t.integer "good_cause"
-    t.integer "organic"
-    t.integer "fair_trade"
+    t.integer "stars"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["review_id"], name: "index_ratings_on_review_id"
