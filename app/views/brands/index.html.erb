@@ -31,10 +31,19 @@
             <%= form.range_field :co2, in: 1..5 %>
             <%= form.label :organic, "organic fabrics" %>
             <%= form.range_field :organic, in: 1..5 %>
+            <br>
             <%= form.label :vegan, "vegan" %>
-            <%= form.range_field :vegan, in: 0..1 %>
+            <%= form.check_box :vegan, class: "className className2" %>
+            <br>
+            <%= form.submit "Search" %>
+          <% end %>
+        </div>
+        <div>
+          <%= form_with url: "/brands", method: :get do |form| %>
+            <br>
             <%= form.label :hand2, "2nd hand" %>
-            <%= form.range_field :hand2, in: 0..1 %>
+            <%= form.check_box :hand2 %>
+            <br>
             <%= form.submit "Search" %>
           <% end %>
         </div>
@@ -51,18 +60,3 @@
         <li class="mb-2"><a href='#' id='filter-second-hand'><%= image_tag 'https://cdn0.iconfinder.com/data/icons/eco-friendly-lifestyle-glyph/64/second-hand-t-shirt-reuse-eco-lifestyle-eco-friendly-512.png', style: 'height:30px;width:30px' %></a></li>
       </ul>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(window).load(function () {
-    $(".trigger_popup_fricc").click(function(){
-       $('.hover_bkgr_fricc').show();
-    });
-    $('.hover_bkgr_fricc').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-    $('.popupCloseButton').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-  });
-
-</script>
