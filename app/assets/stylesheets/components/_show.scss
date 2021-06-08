@@ -3,7 +3,7 @@ body {
 }
 
 h1, h5 {
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto';
 }
 .title {
   display: flex;
@@ -12,19 +12,8 @@ h1, h5 {
   width: 100%;
 }
 
-.social {
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F3E8D7;
-}
-
-.social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-  }
+p {
+font-family: 'Open Sans';
 }
 
 .icon {
@@ -54,20 +43,23 @@ padding-bottom: 200px;
   border: none;
 }
 
-hr {
-    display: block;
-    height: 3px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+// hr {
+//     display: block;
+//     height: 3px;
+//     border: 0;
+//     border-top: 1px solid #ccc;
+//     margin: 1em 0;
+//     padding: 0;
+// }
+
+
+.reviewform {
+  display:flex;
+  justify-content: space-between;
 }
 
-
-.reviews {
+.stars {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  margin-top: 10px;
-  padding: 10px
+  align-items: center;
 }
