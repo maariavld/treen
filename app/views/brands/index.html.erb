@@ -39,23 +39,27 @@
           <%= form_with url: "/brands", method: :get do |form| %>
           <div class="sliderContainer">
             <%= image_tag "good-badge.png", class: "badge-img"%>
-            <%= form.label :good, "Good Cause" %>
-            <%= form.range_field :good, in: 1..5,class: 'slider', id:'myRange'%>
+            <%= form.label :good, "Good Cause"%>
+            <span id = "value"></span>
+            <%= form.range_field :good, in: 1..100,class: 'slider', id:'myRange', value: '1'%>
           </div>
           <div class="sliderContainer">
             <%= image_tag "fair-trade.png", class: "badge-img"%>
             <%= form.label :fair, "Fair Trade" %>
-            <%= form.range_field :fair, in: 1..5,class: 'slider', id:'myRange'%>
+            <span id = "value"></span>
+            <%= form.range_field :fair, in: 1..100,class: 'slider', id:'myRange', value: '1'%>
             </div>
           <div class="sliderContainer">
             <%= image_tag "co2_badge.png", class: "badge-img"%>
             <%= form.label :co2, "Carbon Footprint" %>
-            <%= form.range_field :co2, in: 1..5,class: 'slider',id:'myRange'%>
+            <span id = "value"></span>
+            <%= form.range_field :co2, in: 1..100,class: 'slider', id:'myRange', value: '1'%>
               </div>
           <div class="sliderContainer">
             <%= image_tag "organic-badge.png", class: "badge-img"%>
             <%= form.label :organic, "Organic Fabrics" %>
-            <%= form.range_field :organic, in: 1..5, class: 'slider', id:'myRange'%>
+            <span id = "value"></span>
+            <%= form.range_field :organic, in: 1..100,class: 'slider', id:'myRange', value: '1'%>
               </div>
           <div class="sliders">
             <br>

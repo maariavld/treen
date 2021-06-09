@@ -3,7 +3,7 @@
   appearance: none;
   width: 15px;
   height: 15px;
-  background: rgb(241, 167, 114);
+  background: rgb(201, 177, 144);
   border-radius: 50%;
   cursor: pointer;
   border:0;
@@ -38,3 +38,12 @@
   opacity: 1;
 
 }
+.slider::after{
+  content: '5';
+  display:none;
+}
+.slider::before{
+ content: '0';
+ display:none;
+}
+

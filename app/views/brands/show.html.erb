@@ -1,10 +1,9 @@
 <div class="container">
   <div class="row">
-      <img src="https://source.unsplash.com/collection/12277519/640x426" width=100%>
+      <%= cl_image_tag @brand.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <br>
     <div class="title d-flex">
-      <h1><%= @brand.name %></h1>
       <p><%= @average_reviews %></p>
     </div>
   <p> <%= @brand.address %></p>
@@ -37,7 +36,7 @@
           </div>
         <% elsif  brand.policy.title == "Second Hand" %>
           <div class="brand-policy-icon">
-            <%= image_tag "second-hand-badge.png", width:50 %>
+            <%= image_tag "second_hand_badge.png", width:50 %>
             <span class="badge badge-secondary" ><%= brand.ranking  %></span>
           </div>
         <% end %>

@@ -25,13 +25,10 @@ import "bootstrap";
 import { initMapbox } from "./init_mapbox";
 import 'social-share-button';
 import { loadReview } from "./review";
-// Stars rating
-import { initStarRating } from '../plugins/init_star_rating';
-
-initStarRating();
 
 import { Popup } from "mapbox-gl";
 import { initPop } from "./popup";
+import { sliderInit } from "./slider";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -43,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initPop();
   loadReview();
+  sliderInit();
 });
