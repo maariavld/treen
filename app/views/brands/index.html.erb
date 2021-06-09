@@ -37,7 +37,6 @@
         <% end %>
         <div class="sliders">
           <%= form_with url: "/brands", method: :get do |form| %>
-            <%= cl_image_tag “DownArrow.jpg” %>
             <%= form.label :good, "Good Cause" %>
             <%= form.range_field :good, in: 1..5,class: 'filter-good-cause mb-2', id:'filter-good-cause'%>
             <%= form.label :fair, "fair trade" %>
