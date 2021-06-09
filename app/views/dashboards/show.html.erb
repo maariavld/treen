@@ -6,7 +6,7 @@
   </div>
   <div class="buttons">
     <%= link_to "Edit",  edit_user_registration_path, class: "btn btn-flat" %>
-    <%= link_to "Delete your account", dashboard_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete your account?"}, class:"btn btn-flat" %>
+    <%= link_to "Delete your account", dashboard_path(current_user), method: :delete, data: { confirm: "Are you sure you want to delete your account?"}, class:"btn btn-flat" %>
   </div>
   <div class="brand-dash">
     <%= link_to "Suggest a brand",  new_brand_path, class: "btn btn-flat" %>
