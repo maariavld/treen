@@ -203,24 +203,7 @@ const initMapbox = () => {
 //         });
 //         fitMapToMarkers(map, markers);
 
-//         return false;
-//     };
-
-//     all.onclick = function(e) {
-//         removeActive();
-//         this.className = 'active';
-//         markers.forEach((marker) => {
-//             const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-//             new mapboxgl.Marker({
-//           color: "#BCA788",
-//         })
-//               .setLngLat([ marker.lng, marker.lat ])
-//               .setPopup(popup)
-//               .addTo(map);
-//         });
-//         fitMapToMarkers(map, markers);
-//         return false;
-//     };
+//
  }
 };
 export { initMapbox };
