@@ -1,6 +1,17 @@
 <div class="container">
-  <div class="row">
+  <div class="row image-brand">
       <%= cl_image_tag @brand.photo.key, class:"brand-image", :crop=>"fill" %>
+  </div>
+  <div class="favourites">
+    <% unless current_user.favorite_brands.exists?(id: @brand.id) %>
+      <%= link_to favorite_brands_path(brand_id: @brand), method: :post do %>
+        <i class="far fa-heart heart-custom"></i>
+      <% end %>
+    <% else %>
+      <%= link_to favorite_brand_path(@brand), method: :delete do %>
+        <i class="fas fa-heart heart-custom"></i>
+      <% end %>
+    <% end %>
   </div>
   <br>
     <div class="title d-flex">
@@ -36,7 +47,7 @@
           </div>
         <% elsif  brand.policy.title == "Second Hand" %>
           <div class="brand-policy-icon">
-            <%= image_tag "second_hand_badge.png", width:50 %>
+            <%= image_tag "second-hand-badge.png", width:50 %>
             <span class="badge badge-secondary" ><%= brand.ranking  %></span>
           </div>
         <% end %>
@@ -47,14 +58,14 @@
 
     <ul class="social d-flex space-between">
   <li class="social-container">
-    <h6 class="m-3 share">Share on</h6>
+    <h6 class="m-3 share">Share</h6>
     <a href="https://twitter.com/intent/tweet?url=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:"  onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class= "social-icon">
         <i class="fab fa-twitter m-3"></i>
     </a>
   </li>
   <li class="social-container">
-    <h6 class="m-3 share">Share on</h6>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
+    <h6 class="m-3 share">Share</h6>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
         <i class="fab fa-facebook-f m-3"></i>
     </a>
   </li>
@@ -75,11 +86,7 @@
                 <% (5- review.rating).times do %>
                   <i class="fa fa-star-o" aria-hidden="true"></i>
                 <% end %>
-        <p><%= review.content %></p>
-         <!--  <tr>
-              <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
-              <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-          </tr> -->
+        <p>@<%= review.user.username %> <br> <%= review.content %></p>
         </div>
       <% end %>
     </div>

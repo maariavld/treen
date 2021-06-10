@@ -1,0 +1,15 @@
+.image-brand{
+  position:relative;
+}
+.favourites{
+  position: absolute;
+  top:0px;
+  right:0px;
+  display:flex;
+  justify-content:space-between;
+}
+.heart-custom{
+margin:10px;
+  color: rgb(243, 232, 215);
+  font-size: 30px;
+}
