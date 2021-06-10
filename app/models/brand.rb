@@ -1,5 +1,5 @@
 class Brand < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :brand_policies
   has_many :policies, through: :brand_policies
   has_many :reviews
