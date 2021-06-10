@@ -12,17 +12,17 @@
 
 .mapboxgl-popup-content {
   position:fixed !important;
-  bottom: 64px !important;
+  bottom: 45px !important;
   top: auto !important;
   width: 100vw;
   height: 48vh;
   left: 0;
   text-align: center;
+  border-radius: 20px !important;
   font-family: 'Montserrat', sans-serif !important;
   background-color: #555;
   color: black !important;
   text-align: center;
-  border-radius: 0px !important;;
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
@@ -31,13 +31,31 @@
   display:flex;
   text-align: left;
 
+    img {
+      margin-right: 10px;
+    }
+
   }
   h2 {
-    font-size: 20px;
+    font-size: 30px;
     text-decoration: none !important;
   }
 
+  .title p {
+    font-size: 13px;
+  }
+
 }
+
+a:-webkit-any-link:focus-visible {
+    outline-offset: 0px !important;
+    color: none !important;
+    text-decoration: none !important;
+}
+
+// .brand_name:focus-visible {
+//   outline: none !important;
+
 
 
 h1, h5 {

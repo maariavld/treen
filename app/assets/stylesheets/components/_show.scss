@@ -53,11 +53,21 @@ padding-bottom: 200px;
 //     padding: 0;
 // }
 
+.brand-image {
+
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
+}
 
 .reviewform {
   display:flex;
-  justify-content: space-between;
-  align-items: center;
+
+
+   h5 {
+    font-size: 18px;
+    margin-right: 10px;
+   }
 }
 
 .stars {
