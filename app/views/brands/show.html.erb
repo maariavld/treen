@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-      <%= cl_image_tag @brand.photo.key, width: 300, height: 150, class:"mx-5" %>
+      <%= cl_image_tag @brand.photo.key, class:"brand-image", :crop=>"fill" %>
   </div>
   <br>
     <div class="title d-flex">
