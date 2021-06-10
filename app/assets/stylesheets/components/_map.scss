@@ -1,19 +1,62 @@
-.mapboxgl-popup {
-  max-width: 400px;
-  max-height: 100px;
+.mapboxgl-popup.mapboxgl-popup-anchor-bottom {
+  position:fixed !important;
+  bottom: 0 !important;
+  top: auto !important;
+  transform: inherit !important;
+  // max-width: 400px;
+  // max-height: 100px;
+
+
 }
 
+
 .mapboxgl-popup-content {
+  position:fixed !important;
+  bottom: 64px !important;
+  top: auto !important;
+  width: 100vw;
+  height: 48vh;
+  left: 0;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   background-color: #555;
-  color: #fff;
+  color: black !important;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 0px !important;;
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
+
+  .title {
+  display:flex;
+  text-align: left;
+
+  }
+  h2 {
+    font-size: 20px;
+    text-decoration: none !important;
+  }
+
 }
+
+
+h1, h5 {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.badge_map{
+  color: black;
+  background-color: #E7D8C3 !important;
+  text-align: center;
+  list-style: none;
+  top: 154px;
+  left: 26px;
+
+}
+
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
@@ -27,7 +70,9 @@
 }
 
 .mapboxgl-popup-content a {
-  text-decoration: none;
+  text-decoration: none !important;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
 }
 
 .mapboxgl-popup-content img {
@@ -56,33 +101,35 @@
     }
 
     #map-ui a {
-        font-size: 13px;
-        background: rgba(247, 249, 250,0.7);
+        font-size: 13px !important;
+        background: black !important;
+        font-family: 'Open Sans';
         border-radius:50%;
         display: block;
         margin: 0;
         padding: 0;
         border-bottom-width: 0;
         padding: 10px;
-        text-decoration: none;
-        box-shadow: 2px 2px 7px rgba(4, 29, 28, 0.2);
+        text-decoration: none !important;
+        box-shadow: none !important;
     }
 
     #map-ui a:hover {
-        background: #ECF5FA;
+        background: white !important;
+        color: white !important;
     }
 
     #map-ui li:last-child a {
-        -webkit-border-radius: 0 0 3px 3px;
-        border-radius: 50%;
+        -webkit-border-radius: none !important;
+        border-radius: 0%;
     }
 
     #map-ui li:first-child a {
-        -webkit-border-radius: 3px 3px 0 0;
-        border-radius: 50%;
+        -webkit-border-radius: none !important;
+        border-radius: 0%;
     }
 
     #map-ui a.active {
-        background: #3887BE;
-        color: #FFF;
+        background: white !important;
+        color: #FFF !important;
     }

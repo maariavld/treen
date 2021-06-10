@@ -35,30 +35,66 @@
          </ul>
          </div>
         <% end %>
-        <div class="sliders">
+        <div>
           <%= form_with url: "/brands", method: :get do |form| %>
-            <%# <%= cl_image_tag “DownArrow.jpg” %> %>
-            <%= form.label :good, "Good Cause" %>
-            <%= form.range_field :good, in: 1..5,class: 'filter-good-cause mb-2', id:'filter-good-cause'%>
-            <%= form.label :fair, "fair trade" %>
-            <%= form.range_field :fair, in: 1..5,class: 'filter-fair-trade mb-2', id:'filter-fair-trade'%>
-            <%= form.label :co2, "carbon footprint" %>
-            <%= form.range_field :co2, in: 1..5,class: 'filter-co-2 mb-2',id:'filter-co-2'%>
-            <%= form.label :organic, "organic fabrics" %>
-            <%= form.range_field :organic, in: 1..5, class: 'filter-organic mb-2', id:'filter-organic'%>
-            <br>
-            <%= form.label :vegan, "vegan" %>
-            <%= form.check_box :vegan, class: 'filter-vegan mb-2',id:'filter-vegan' %>
-            <br>
+          <div class="sliderContainer">
+            <div class="slideLabel">
+            <%= image_tag "good-badge.png", class: "badge-img"%>
+            <%= form.label :good, "Good Cause"%>
+          </div>
+            <div class="slide">
+              <span id = "valueGood"></span>
+              <%= form.range_field :good, in: 1..100, class: 'slider', id:'myRangeGood', value: '1'%>
+          </div>
+          </div>
+          <div class="sliderContainer">
+          <div class="slideLabel">
+            <%= image_tag "fair-trade.png", class: "badge-img"%>
+            <%= form.label :fair, "Fair Trade" %>
+          </div>
+            <div class="slide">
+            <span id = "valueFair"></span>
+            <%= form.range_field :fair, in: 1..100, class: 'slider', id:'myRangeFair', value: '1'%>
+            </div>
+          </div>
+          <div class="sliderContainer">
+            <div class="slideLabel">
+            <%= image_tag "co2_badge.png", class: "badge-img"%>
+            <%= form.label :co2, "Carbon Neutral" %>
+          </div>
+            <div class="slide">
+            <span id = "valueCO2"></span>
+            <%= form.range_field :co2, in: 1..100, class: 'slider', id:'myRangeCO2', value: '1'%>
+              </div>
+            </div>
+          <div class="sliderContainer">
+            <div class="slideLabel">
+              <%= image_tag "organic-badge.png", class: "badge-img"%>
+              <%= form.label :organic, "Organic Fabrics" %>
+            </div>
+            <div class="slide">
+            <span id = "valueOrganic"></span>
+            <%= form.range_field :organic, in: 1..100, class: 'slider', id:'myRangeOrganic', value: '1'%>
+              </div>
+            </div>
+            <hr>
+          <div class="checkPol">
+            <%= image_tag "vegan-badge.png", class: "badge-img"%>
+            <%= form.label :vegan%>
+            <%= form.check_box :vegan%>
+          </div>
             <%= form.submit "Search" %>
           <% end %>
         </div>
-        <div class="onoff">
+        <hr>
+        <div>
           <%= form_with url: "/brands", method: :get do |form| %>
+          <div class="checkPol">
+            <%= image_tag "second_hand_badge.png", class: "badge-img"%>
+            <%= form.label :hand2, "Second Hand"%>
+            <%= form.check_box :hand2, id:'filter-second-hand' %>
             <br>
-            <%= form.label :hand2, "2nd hand" %>
-            <%= form.check_box :hand2, class: 'mb-2', id:'filter-second-hand' %>
-            <br>
+              </div>
             <%= form.submit "Search" %>
           <% end %>
         </div>

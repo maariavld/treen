@@ -11,22 +11,22 @@ before_action :set_brand_policy, only: [:show]
 
     if params[:good].present?
       good_id = Policy.find_by(title:'Good Cause').id
-      brand_policy = BrandPolicy.where("policy_id = #{good_id} AND ranking >= #{params[:good].to_i}")
+      brand_policy = BrandPolicy.where("policy_id = #{good_id} AND ranking >= #{(params[:good].to_i / 20).floor}")
       @brands = @brands.where(id: brand_policy.map(&:brand_id))
     end
     if params[:fair].present?
       fair_id = Policy.find_by(title:'Fair Trade').id
-      brand_policy = BrandPolicy.where("policy_id = #{fair_id} AND ranking >= #{params[:fair].to_i}")
+      brand_policy = BrandPolicy.where("policy_id = #{fair_id} AND ranking >= #{(params[:fair].to_i / 20).floor}")
       @brands = @brands.where(id: brand_policy.map(&:brand_id))
     end
     if params[:co2].present?
       co2_id = Policy.find_by(title:'Carbon Footprint').id
-      brand_policy = BrandPolicy.where("policy_id = #{co2_id} AND ranking >= #{params[:co2].to_i}")
+      brand_policy = BrandPolicy.where("policy_id = #{co2_id} AND ranking >= #{(params[:co2].to_i / 20).floor}")
       @brands = Brand.where(id: brand_policy.map(&:brand_id))
     end
     if params[:organic].present?
       organic_id = Policy.find_by(title:'Organic Fabrics').id
-      brand_policy = BrandPolicy.where("policy_id = #{organic_id} AND ranking >= #{params[:organic].to_i}")
+      brand_policy = BrandPolicy.where("policy_id = #{organic_id} AND ranking >= #{(params[:organic].to_i / 20).floor}")
       @brands = @brands.where(id: brand_policy.map(&:brand_id))
     end
     if params[:vegan].present?
