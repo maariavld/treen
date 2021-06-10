@@ -5,6 +5,18 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+    <%= favicon_link_tag %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,11 +25,21 @@
   </head>
 
   <body>
+
+<% unless notice.nil? %>
+   <p class="notice"><%= notice %></p>
+<% end %>
+<% unless alert.nil? %>
+   <p class="alert"><%= alert %></p>
+<% end %>
+
 <!--     <%# unless controller_name == "brands" && action_name == "index" %>
       <p class="notice"><%#= notice %></p>
       <p class="alert"><%#= alert %></p>
     <%# end %> -->
+
     <%= yield %>
     <%= render 'shared/navbar' unless controller_name == "pages" && action_name == "home" %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </body>
 </html>

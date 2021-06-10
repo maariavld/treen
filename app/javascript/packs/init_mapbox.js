@@ -3,16 +3,16 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  var vegan = document.getElementById('filter-vegan');
-  var all = document.getElementById('filter-all');
-  var good = document.getElementById('filter-good-cause');
-  var fairTrade = document.getElementById('filter-fair-trade');
-  var co2 = document.getElementById('filter-co-2');
-  var secondHand = document.getElementById('filter-second-hand');
-  var organic = document.getElementById('filter-organic');
-
+  var vegan = document.getElementById('vegan-filter');
+  var all = document.getElementById('all-filter');
+  var good = document.getElementById('good-cause-filter');
+  var fairTrade = document.getElementById('fair-trade-filter');
+  var co2 = document.getElementById('co2-filter');
+  var secondHand = document.getElementById('second-hand-filter');
+  var organic = document.getElementById('organic-filter');
   const removeActive = () => {
-    const indicators = document.querySelectorAll('.mb-2 a');
+    const indicators = document.querySelectorAll('.filter > img');
+    console.log(indicators);
     indicators.forEach((el) => {
     console.log(el);
     el.classList.remove('active');
@@ -30,13 +30,15 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/erikvogler/ckpfmi53a1d8s17qqmygpjvfb'
+      style: 'mapbox://styles/erikvogler/ckpo4lvfc09qh17mdwnl6dgfu'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
 
     markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({
+          color: "#BCA788",
+        })
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
@@ -55,9 +57,12 @@ const initMapbox = () => {
 
     map.addControl(new mapboxgl.NavigationControl());
 
+
     vegan.onclick = function(e) {
         removeActive();
         this.className = 'active';
+        // const currentBounds = map.getBounds();
+        // console.log(currentBounds);
         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
           element.remove()
         });
@@ -68,12 +73,14 @@ const initMapbox = () => {
           return f.vegan;
         }).forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-        new mapboxgl.Marker()
+        new mapboxgl.Marker({
+          color: "#BCA788",
+        })
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -91,12 +98,14 @@ const initMapbox = () => {
           return f.good;
         }).forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-        new mapboxgl.Marker()
+        new mapboxgl.Marker({
+          color: "#BCA788",
+        })
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -113,12 +122,14 @@ const initMapbox = () => {
           return f.fairTrade;
         }).forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-        new mapboxgl.Marker()
+        new mapboxgl.Marker({
+          color: "#BCA788",
+        })
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -134,13 +145,15 @@ const initMapbox = () => {
           // console.log(f);
           return f.co2;
         }).forEach((marker) => {
-          const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-          new mapboxgl.Marker()
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        new mapboxgl.Marker({
+          color: "#BCA788",
+        })
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup)
           .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -158,12 +171,14 @@ const initMapbox = () => {
           return f.organic;
         }).forEach((marker) => {
           const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-          new mapboxgl.Marker()
+          new mapboxgl.Marker({
+          color: "#BCA788",
+        })
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup)
           .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -181,12 +196,14 @@ const initMapbox = () => {
           return f.secondHand;
         }).forEach((marker) => {
           const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-          new mapboxgl.Marker()
+          new mapboxgl.Marker({
+          color: "#BCA788",
+        })
           .setLngLat([ marker.lng, marker.lat ])
           .setPopup(popup)
           .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -196,15 +213,17 @@ const initMapbox = () => {
         this.className = 'active';
         markers.forEach((marker) => {
             const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-            new mapboxgl.Marker()
+            new mapboxgl.Marker({
+          color: "#BCA788",
+        })
               .setLngLat([ marker.lng, marker.lat ])
               .setPopup(popup)
               .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
         return false;
     };
-  }
+ }
 };
 export { initMapbox };
 

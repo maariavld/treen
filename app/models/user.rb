@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :reviews
   has_many :brands
+  has_many :favorites
+  has_many :favorite_brands, through: :favorites, source: :favorited, source_type: 'Brand'
 
   validates :first_name, :last_name, :username, :encrypted_password, presence: true
   validates :username, length: { minimum: 4, too_short: "minimum is %{count} characters" }

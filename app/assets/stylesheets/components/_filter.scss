@@ -1,0 +1,112 @@
+/* Popup box BEGIN */
+.hover_bkgr_filter {
+    // background:rgba(250, 250,250,.4);
+    cursor:pointer;
+    display:none;
+    height:10%;
+    // position:fixed;
+    text-align:center;
+    top:-5px;
+    // left:-13px;
+    width:100%;
+    z-index:0;
+}
+
+.hover_bkgr_filter .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:bottom;
+}
+.hover_bkgr_filter > div {
+    // background-color: rgba(250, 250, 250, 0.9);
+    // box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 95vw;
+    height: 10vh;
+    vertical-align: middle;
+    position: relative;
+    padding: 0;
+    bottom: 75px;
+    border-radius: 5%;
+    right: 3px;
+}
+.badge_icons{
+  list-style:none;
+  position:absolute;
+  right:15px;
+  top:25px;
+  display:grid;
+  grid-gap:2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.popupCloseButtonFilter {
+    color: rgb(4, 37, 35);
+    cursor: pointer;
+    display: inline-block;
+    font-family: fantasy;
+    font-weight: lighter;
+    position: absolute;
+    top: 95px;
+    right: 168px;
+    font-size: 5px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    z-index: 10;
+}
+.popupCloseButtonFilter:hover {
+    color: rgb(221, 110, 66);
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterBar .active {
+  // background: rgb(235, 0, 0) !important;
+  // color: rgb(236, 13, 13) !important;
+  border: 50px;
+  border-color: saddlebrown;
+  transform: scale(1.3);
+}
+
+#all-filter {
+    color: rgb(4, 37, 35);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bolder;
+    position: absolute;
+    top: -30px;
+    right: 142px;
+    font-size: 15px;
+    width: auto;
+    height: auto;
+    z-index: 10;
+    background-color: #F3E8D7;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30%;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+}
+// .trigger_popup_filter {
+//   font-family: 'Open Sans';
+//     padding:7px;
+//     background-color: #F3E8D7;
+//     color: black;
+//     bottom: 50px;
+//     position: absolute;
+//     top:30px;
+//     right:60px;
+//     z-index: 100;
+//     cursor: pointer;
+//     font-size: 20px;
+//     display: inline-block;
+//     font-weight: bold;
+//     color:black;
+// }
+
+/* Popup box BEGIN */

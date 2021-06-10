@@ -36,6 +36,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 gem 'pundit'
 gem 'social-share-button', '~> 1.2', '>= 1.2.4'
+gem 'simple_form_extension'
+gem 'faker'
 
 
 group :development, :test do
@@ -68,3 +70,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'redactor-rails', github: 'glyph-fr/redactor-rails'

@@ -11,13 +11,16 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    # we need `restaurant_id` to associate review with corresponding restaurant
     @brand = Brand.find(params[:brand_id])
     @review.brand = @brand
     @review.user = current_user
-    @review.save
+    if @review.save
+      redirect_to brand_path(@brand)
+    else
+      redirect_to brand_path(@brand), notice: 'You need to specify a rating'
+      # render "shared/reviewform"
+    end
     authorize @review
-    redirect_to brand_path(@brand)
     # @review = Review.new(review_params)
     # @review.user = current_user
 
@@ -52,6 +55,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :rating)
   end
 end

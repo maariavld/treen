@@ -2,7 +2,7 @@
     <div class="arrow-left">
       <span class="arrow">&#x2039;</span>
     </div>
-    <%= cl_image_tag("https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/treen_z0ezrx.png") %>
+    <%= cl_image_tag("https://res.cloudinary.com/dr8v0dbbd/image/upload/v1623336840/users/illustrations/first_oskpoo.png") %>
     <div class="arrow-right">
       <span class="arrow">&#x203A;</span>
     </div>
@@ -17,7 +17,7 @@
   const arrowRight = document.querySelector('.arrow-right');
   const imgCarousel = document.querySelector('img');
   const indicators = document.querySelectorAll('.indicators > span');
-  const images = ['https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/treen_z0ezrx.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651806/users/illustrations/sus_fsr0fd.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622651805/users/illustrations/SEARCH_wjbuqv.png'];
+  const images = ['https://res.cloudinary.com/dr8v0dbbd/image/upload/v1623336840/users/illustrations/first_oskpoo.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1623336873/users/illustrations/phone_kc6p66.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1623336884/users/illustrations/res_xcuprs.png', 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1623336856/users/illustrations/search-c_mluz3h.png'];
 
   const setAttr = (el, attr, value) => el.setAttribute(attr, value);
   const getAttr = (el, attr) => el.getAttribute(attr);
@@ -30,11 +30,11 @@
   };
 
   const getArrowLeftImageIndex = (currentIndex) => {
-    return currentIndex === 0 ? 2 : currentIndex - 1;
+    return currentIndex === 0 ? 3 : currentIndex - 1;
   };
 
   const getArrowRightImageIndex = (currentIndex) => {
-    return currentIndex === 2 ? -1 : currentIndex + 1;
+    return currentIndex === 3 ? -1 : currentIndex + 1;
   };
 
   const activateIndicator = (index) => {
