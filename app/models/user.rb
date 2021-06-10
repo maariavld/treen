@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one_attached :photo
   has_many :reviews
+  has_many :brands
   has_many :favorites
   has_many :favorite_brands, through: :favorites, source: :favorited, source_type: 'Brand'
 
