@@ -120,13 +120,14 @@
       <%# <div class="popupCloseButtonFilter ">&times;</div> %>
         <div class="container">
           <p class="popupCloseButtonFilter ">x</p>
+          <p id="all-filter">show all</p>
           <div class="filterBar" >
-            <%= image_tag "vegan-badge.png", width:50, id: "vegan-filter" %>
-            <%= image_tag "co2-badge.png", width:50, id: "co2-filter" %>
-            <%= image_tag "fair-trade.png", width:50, id: "fair-trade-filter" %>
-            <%= image_tag "organic-badge.png", width:50, id: "organic-filter" %>
-            <%= image_tag "good-badge.png", width:50, id: "good-cause-filter" %>
-            <%= image_tag "second-hand-badge.png", width:50, id: "second-hand-filter" %>
+            <div class="filter"><%= image_tag "vegan-badge.png", width:50, id: "vegan-filter" %></div>
+             <div class="filter"><%= image_tag "co2-badge.png", width:50, id: "co2-filter" %></div>
+             <div class="filter"><%= image_tag "fair-trade.png", width:50, id: "fair-trade-filter" %></div>
+             <div class="filter"><%= image_tag "organic-badge.png", width:50, id: "organic-filter" %></div>
+             <div class="filter"><%= image_tag "good-badge.png", width:50, id: "good-cause-filter" %></div>
+             <div class="filter"><%= image_tag "second-hand-badge.png", width:50, id: "second-hand-filter" %></div>
           </div>
         </div>
 </div>
