@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 2021_06_07_093140) do
     t.integer "good_cause"
     t.integer "organic"
     t.integer "fair_trade"
-    t.integer "stars"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["review_id"], name: "index_ratings_on_review_id"
