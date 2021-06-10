@@ -4,7 +4,6 @@
   </div>
   <br>
     <div class="title d-flex">
-
       <p><%= @average_reviews %></p>
     </div>
   <p> <%= @brand.address %></p>
@@ -17,7 +16,7 @@
           </div>
         <% elsif  brand.policy.title == "Carbon Footprint" %>
           <div class="brand-policy-icon">
-            <%= image_tag "co2_badge.png", width:50 %>
+            <%= image_tag "co2-badge.png", width:50 %>
             <span class="badge badge-secondary" ><%= brand.ranking  %></span>
           </div>
         <% elsif  brand.policy.title == "Fair Trade" %>
@@ -45,15 +44,21 @@
     </div>
 
 <br>
-  <div class="social">
-    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %></a>
-  </div>
-    <!-- <div>
-      <p class="twitter">Share on</p>
-      <p class="facebook">Share on</p>
-    </div> -->
 
-        <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
+    <ul class="social d-flex space-between">
+  <li class="social-container">
+    <h6 class="m-3 share">Share on</h6>
+    <a href="https://twitter.com/intent/tweet?url=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:"  onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class= "social-icon">
+        <i class="fab fa-twitter m-3"></i>
+    </a>
+  </li>
+  <li class="social-container">
+    <h6 class="m-3 share">Share on</h6>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
+        <i class="fab fa-facebook-f m-3"></i>
+    </a>
+  </li>
+</ul>
 
   <p class="text-muted"><%= @brand.description %></p>
   <div class="reviewform">

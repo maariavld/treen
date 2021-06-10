@@ -25,7 +25,7 @@
     box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.2);
     display: inline-block;
     width: 71.5vw;
-    height: 75vh;
+    height: 73vh;
     vertical-align: middle;
     position: relative;
     padding: 15px 5%;
@@ -46,8 +46,8 @@
     font-family: arial;
     font-weight: bold;
     position: absolute;
-    top: 20px;
-    right: 0px;
+    top: 10px;
+    right: 10px;
     font-size: 25px;
     line-height: 30px;
     width: 30px;
@@ -59,16 +59,15 @@
 }
 .trigger_popup_fricc {
   font-family: 'Open Sans';
-    padding:7px;
-    position: absolute;
-    top:20px;
-    right:60px;
-    z-index: 100;
-    cursor: pointer;
-    font-size: 20px;
-    display: inline-block;
-    font-weight: bold;
-    color:black;
+  color: black;
+  position: absolute;
+  top:30px;
+  right:90px;
+  z-index: 100;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-block;
+  font-weight: bold;
 }
 .fa-chevron-down{
   color:black;
