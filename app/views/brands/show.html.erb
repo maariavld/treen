@@ -44,15 +44,21 @@
     </div>
 
 <br>
-  <div class="social">
-    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'www.treen.xyz', desc: @brand.name) %></a>
-  </div>
-    <!-- <div>
-      <p class="twitter">Share on</p>
-      <p class="facebook">Share on</p>
-    </div> -->
 
-        <%#= @brand.brand_policies.joins(:policy).find_by('policy.title ILIKE ?',"Carbon Footprint")%>
+    <ul class="social">
+  <li class="social-container">
+    <h6>Share on</h6>
+    <a href="https://twitter.com/intent/tweet?url=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:"  onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class= "social-icon">
+        <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  <li class="social-container">
+    <h6>Share on</h6>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+  </li>
+</ul>
 
   <p class="text-muted"><%= @brand.description %></p>
   <div class="reviewform">

@@ -1,59 +1,24 @@
-$size: 30px;
-
-.social-share-button {
-  .ssb-icon {
-    margin:10px;
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-
-  }
-}
-.badge-secondary {
-  background-color: #E7D8C3!important;
-
-}
-
-
-.brand-policy-icon {
-  width: 40px;
-  position: relative;
-      span {
-        position: absolute;
-        bottom: -12px;
-        right: 8px;
-        color: black;
-    }
-}
-
-
-.social-share-button {
-
-  display: flex;
-  // flex-direction: column;
-
-
-  .ssb-facebook{
-    background-image: url("../../assets/images/facebook.png");
-    padding:20px;
-    border-radius: 5px;
-    background-color: #E7D6BB;
-
-  }
-  .ssb-twitter{
-    background-image: url("../../assets/images/twitter.png");
-    padding:20px;
-    border-radius: 5px;
-    background-color: #E7D6BB;
-  }
-}
-
-.social {
+.social-container{
   display:flex;
-  justify-content: space-between;
-  align-items: center;
-  // background-color: #F3E8D7;
-  // flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  flex-direction: row;
 
 }
 
+.social{
+display:flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: row;
+}
+li{
+  list-style:none;
+}
+.social-icon{
+  color:rgb(38, 28, 37);
+  background-color:rgb(243, 232, 215);
+  padding:16px;
+  font-size:20px;
+  border-radius: 7px;
+}
