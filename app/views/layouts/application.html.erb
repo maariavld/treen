@@ -24,10 +24,12 @@
 
   <body>
 
-<% unless controller_name == "brands" && action_name == "index" %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+<% unless notice.nil? %>
+   <p class="notice"><%= notice %></p>
+<% end %>
+<% unless alert.nil? %>
+   <p class="alert"><%= alert %></p>
+<% end %>
 
 <!--     <%# unless controller_name == "brands" && action_name == "index" %>
       <p class="notice"><%#= notice %></p>
