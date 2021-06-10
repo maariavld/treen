@@ -16,7 +16,7 @@
       <% end %>
     </div>
 </div>
-<%# <a class="trigger_popup_fricc"><i class="fas fa-chevron-down"></i></a> %>
+<a class="trigger_popup_fricc"><i class="fas fa-chevron-down"></i></a>
 
 <div class="hover_bkgr_fricc">
     <span class="helper"></span>
@@ -59,7 +59,7 @@
           </div>
           <div class="sliderContainer">
             <div class="slideLabel">
-            <%= image_tag "co2_badge.png", class: "badge-img"%>
+            <%= image_tag "co2-badge.png", class: "badge-img"%>
             <%= form.label :co2, "Carbon Neutral" %>
           </div>
             <div class="slide">
@@ -90,7 +90,7 @@
         <div>
           <%= form_with url: "/brands", method: :get do |form| %>
           <div class="checkPol">
-            <%= image_tag "second_hand_badge.png", class: "badge-img"%>
+            <%= image_tag "second-hand-badge.png", class: "badge-img"%>
             <%= form.label :hand2, "Second Hand"%>
             <%= form.check_box :hand2, id:'filter-second-hand' %>
             <br>
