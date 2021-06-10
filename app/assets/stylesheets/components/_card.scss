@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6{
 
 .card-trip-infos {
   display: grid;
-  grid-template-row: auto;
+  grid-template-rows: 1fr 1fr 1fr;
   position: absolute;
   top: 50%;
   left: 50%;
