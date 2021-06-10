@@ -78,7 +78,7 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
