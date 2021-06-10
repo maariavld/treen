@@ -4,24 +4,24 @@
   overflow: hidden;
   position: fixed;
   width: 100vw;
-  height: 8%;
+  height: 10%;
   z-index: 1;
   bottom: 0;
   // border-top-left-radius: 10%;
   // border-top-right-radius: 10%;
+  a {
+    color: #cfd2cd;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  img {
+    // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    // border: white 1px solid;
+  }
 }
 
-a {
-  color: #cfd2cd;
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-img {
-  // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  width: 50px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  // border: white 1px solid;
-}
 
