@@ -10,9 +10,9 @@ const initMapbox = () => {
   var co2 = document.getElementById('co2-filter');
   var secondHand = document.getElementById('second-hand-filter');
   var organic = document.getElementById('organic-filter');
-  console.log(vegan);
   const removeActive = () => {
-    const indicators = document.querySelectorAll('.mb-2');
+    const indicators = document.querySelectorAll('.filter > img');
+    console.log(indicators);
     indicators.forEach((el) => {
     console.log(el);
     el.classList.remove('active');
@@ -61,6 +61,8 @@ const initMapbox = () => {
     vegan.onclick = function(e) {
         removeActive();
         this.className = 'active';
+        // const currentBounds = map.getBounds();
+        // console.log(currentBounds);
         document.querySelectorAll('.mapboxgl-marker').forEach(element => {
           element.remove()
         });
@@ -103,7 +105,7 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -127,7 +129,7 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -151,7 +153,7 @@ const initMapbox = () => {
           .setPopup(popup)
           .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -176,7 +178,7 @@ const initMapbox = () => {
           .setPopup(popup)
           .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
@@ -201,26 +203,26 @@ const initMapbox = () => {
           .setPopup(popup)
           .addTo(map);
         });
-        fitMapToMarkers(map, markers);
+        // fitMapToMarkers(map, markers);
 
         return false;
     };
 
-    // all.onclick = function(e) {
-    //     removeActive();
-    //     this.className = 'active';
-    //     markers.forEach((marker) => {
-    //         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    //         new mapboxgl.Marker({
-    //       color: "#BCA788",
-    //     })
-    //           .setLngLat([ marker.lng, marker.lat ])
-    //           .setPopup(popup)
-    //           .addTo(map);
-    //     });
-    //     fitMapToMarkers(map, markers);
-    //     return false;
-    // };
+    all.onclick = function(e) {
+        removeActive();
+        this.className = 'active';
+        markers.forEach((marker) => {
+            const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+            new mapboxgl.Marker({
+          color: "#BCA788",
+        })
+              .setLngLat([ marker.lng, marker.lat ])
+              .setPopup(popup)
+              .addTo(map);
+        });
+        // fitMapToMarkers(map, markers);
+        return false;
+    };
  }
 };
 export { initMapbox };
