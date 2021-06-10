@@ -37,6 +37,7 @@ gem 'geocoder'
 gem 'pundit'
 gem 'social-share-button', '~> 1.2', '>= 1.2.4'
 gem 'simple_form_extension'
+gem 'faker'
 
 group :development, :test do
   gem 'pry-byebug'
