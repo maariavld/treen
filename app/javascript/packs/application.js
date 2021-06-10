@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initPop();
   loadReview();
-  initStarRating();
   sliderInit();
   initFilter();
+  initStarRating();
 });
