@@ -39,7 +39,6 @@ before_action :set_brand_policy, only: [:show]
       brand_policy = BrandPolicy.where("policy_id = #{hand2_id} AND ranking >= #{params[:hand2].to_i}")
       @brands = @brands.where(id: brand_policy.map(&:brand_id))
     end
-
     @markers = @brands.geocoded.map do |brand| {
         lat: brand.latitude,
         lng: brand.longitude,
