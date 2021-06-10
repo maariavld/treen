@@ -45,7 +45,8 @@ file_secondella = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1
 secondella = Brand.new(
       name: 'SECONDELLA',
       address: 'Hohe Bleichen 5, 20354 Hamburg',
-      description: 'Designer, Second-Hand, Mode and Accessoires'
+      description: 'Designer, Second-Hand, Mode and Accessoires',
+      status: "Accepted"
 )
 secondella.photo.attach(io: file_secondella, filename: 'secondella.png', content_type: 'image/png')
 secondella.save
@@ -62,7 +63,8 @@ file_second_schanze = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/uploa
 second_schanze = Brand.new(
       name: 'Second Schanze',
       address: 'Weidenallee 54, 20357 Hamburg',
-      description: 'Small, elegant shop stocking second-hand designer apparel, shoes and handbags for women.'
+      description: 'Small, elegant shop stocking second-hand designer apparel, shoes and handbags for women.',
+      status: "Accepted"
 )
 second_schanze.photo.attach(io: file_second_schanze, filename: 'second_schanze.png', content_type: 'image/png')
 second_schanze.save
@@ -79,7 +81,8 @@ file_fifty = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162275
 fifty = Brand.new(
       name: 'FIFTY:FIFTY',
       address: 'Blankeneser Bahnhofstraße 7, 22587 Hamburg',
-      description: 'FIFTY: FIFTY combines luxury with the mentality of circular fashion. Vintage fashion and pre-owned are more than just a temporary trend!'
+      description: 'FIFTY: FIFTY combines luxury with the mentality of circular fashion. Vintage fashion and pre-owned are more than just a temporary trend!',
+      status: "Accepted"
 )
 fifty.photo.attach(io: file_fifty, filename: 'fifty.png', content_type: 'image/png')
 fifty.save
@@ -96,7 +99,8 @@ file_humana = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v16227
 humana = Brand.new(
       name: 'HUMANA',
       address: 'Bremer Str. 2, 21073 Hamburg',
-      description: 'Inexpensive second-hand clothing for him and her. From casual wear to highly elegant, from traditional costume to totally trendy!'
+      description: 'Inexpensive second-hand clothing for him and her. From casual wear to highly elegant, from traditional costume to totally trendy!',
+      status: "Accepted"
 )
 humana.photo.attach(io: file_humana , filename: 'humana.png', content_type: 'image/png')
 humana.save
@@ -113,7 +117,8 @@ file_klamottensen = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/
 klamottensen = Brand.new(
       name: 'Klamottensen',
       address: 'Kleine Rainstraße 6, 22765 Hamburg',
-      description: 'Klamottensen has selected second-hand clothing as well as delicious waffles and coffee on offer.'
+      description: 'Klamottensen has selected second-hand clothing as well as delicious waffles and coffee on offer.',
+      status: "Accepted"
 )
 klamottensen.photo.attach(io: file_klamottensen, filename: 'klamottensen.png', content_type: 'image/png')
 klamottensen.save
@@ -130,7 +135,8 @@ file_knallbonbon = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v
 knallbonbon = Brand.new(
       name: 'Knallbonbon',
       address: 'Wandsbeker Chaussee 259, 22089 Hamburg',
-      description: 'Cutting-edge second hand fashion at low prices'
+      description: 'Cutting-edge second hand fashion at low prices',
+      status: "Accepted"
 )
 knallbonbon.photo.attach(io: file_knallbonbon, filename: 'knallbonbon.png', content_type: 'image/png')
 knallbonbon.save
@@ -147,7 +153,8 @@ file_oxfam = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162275
 oxfam = Brand.new(
       name: 'Oxfam Shop',
       address: 'Wandsbeker Marktstraße 10, 22041 Hamburg',
-      description: 'In the thrift stores Oxfam find a wide range of donated things - from clothing to books and media to household items. You are doing good with every purchase!'
+      description: 'In the thrift stores Oxfam find a wide range of donated things - from clothing to books and media to household items. You are doing good with every purchase!',
+      status: "Accepted"
 )
 oxfam.photo.attach(io: file_oxfam, filename: 'oxfam.png', content_type: 'image/png')
 oxfam.save
@@ -164,7 +171,8 @@ file_rudolf = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v16227
 rudolf = Brand.new(
       name: 'Rudolf Beaufays Superior Vintage Style',
       address: 'Büschstraße 9, 20354 Hamburg',
-      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.'
+      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.',
+      status: "Accepted"
 )
 rudolf.photo.attach(io: file_rudolf, filename: 'rudolf.png', content_type: 'image/png')
 rudolf.save
@@ -181,7 +189,8 @@ file_hot_dogs = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162
 hot_dogs = Brand.new(
       name: 'Hot Dogs',
       address: 'Marktstraße 38, 20357 Hamburg',
-      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.'
+      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.',
+      status: "Accepted"
 )
 hot_dogs.photo.attach(io: file_hot_dogs, filename: 'hot_dogs.png', content_type: 'image/png')
 hot_dogs.save
@@ -198,7 +207,8 @@ file_jimmy = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162275
 jimmy = Brand.new(
       name: 'Jimmy',
       address: 'Schanzenstraße 5, 20357 Hamburg',
-      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.'
+      description: 'Vintage and secondhand clothing store stocking elegant, traditional and tailored items.',
+      status: "Accepted"
 )
 jimmy.photo.attach(io: file_jimmy, filename: 'jimmy.png', content_type: 'image/png')
 jimmy.save
@@ -215,7 +225,8 @@ file_kca = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v16225511
 kca = Brand.new(
       name: 'Knowledge Cotton Apparel',
       address: 'Beim Schlump 9, 20144 Hamburg',
-      description: 'Jimmy Hamburg is the shop for the latest design, sustainable products and trends from all over the world. The range is completed with handmade shoes, wine, accessories and beautiful tableware from Italy.'
+      description: 'Jimmy Hamburg is the shop for the latest design, sustainable products and trends from all over the world. The range is completed with handmade shoes, wine, accessories and beautiful tableware from Italy.',
+      status: "Accepted"
 )
 kca.photo.attach(io: file_kca, filename: 'knowledgecottonapparel.png', content_type: 'image/png')
 kca.save
@@ -257,7 +268,8 @@ file_reco = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622557
 recolution = Brand.create(
       name: 'Recolution',
       address: 'Borsteler Chaussee 85/99A, 22453 Hamburg',
-      description: 'Urban, sustainable, uncompromising. Long-lasting favorite pieces designed in Hamburg, produced in Europe and developed for a world that should still be livable tomorrow.'
+      description: 'Urban, sustainable, uncompromising. Long-lasting favorite pieces designed in Hamburg, produced in Europe and developed for a world that should still be livable tomorrow.',
+      status: "Accepted"
 )
 recolution.photo.attach(io: file_reco, filename: 'recolution.png', content_type: 'image/png')
 recolution.save
@@ -299,7 +311,8 @@ file_aa = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162255134
 armed_angels = Brand.create(
       name: 'Armed Angels',
       address: 'Gärtnerstraße 20, 20253 Hamburg',
-      description: 'We love beautiful, eco and fair products. With a great team it’s our mission to combine fair working conditions and sustainable, high quality materials with beautiful design. Instead of chasing the latest trends we focus on modern, contemporary collections. Fair Fashion instead of Fast Fashion. That’s what we live for.'
+      description: 'We love beautiful, eco and fair products. With a great team it’s our mission to combine fair working conditions and sustainable, high quality materials with beautiful design. Instead of chasing the latest trends we focus on modern, contemporary collections. Fair Fashion instead of Fast Fashion. That’s what we live for.',
+      status: "Accepted"
 )
 armed_angels.photo.attach(io: file_aa, filename: 'armedangels.jpg', content_type: 'image/jpg')
 armed_angels.save
@@ -341,7 +354,8 @@ file_bt = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162255762
 bridge_tunnel = Brand.create(
       name: 'Bridge&Tunnel',
       address: 'Am Veringhof 13, 21107 Hamburg',
-      description: 'Bridge & Tunnel stands for design that changes society. Bridge&Tunnel produces sustainably and fairly: in Hamburg with socially disadvantaged people as well as with refugees who have only recently come to Germany. Bridge & Tunnel is a non-profit label. With every purchase of their products, you are helping to get even more socially disadvantaged people into work.'
+      description: 'Bridge & Tunnel stands for design that changes society. Bridge&Tunnel produces sustainably and fairly: in Hamburg with socially disadvantaged people as well as with refugees who have only recently come to Germany. Bridge & Tunnel is a non-profit label. With every purchase of their products, you are helping to get even more socially disadvantaged people into work.',
+      status: "Accepted"
 )
 bridge_tunnel.photo.attach(io: file_bt, filename: 'bridgetunnel.png', content_type: 'image/png')
 bridge_tunnel.save
@@ -383,7 +397,8 @@ file_cp = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/w_1000,ar_
 cory_phae = Brand.create(
       name: 'Cory&Phäe',
       address: 'Marktstraße 15, 20357 Hamburg',
-      description: 'Unique, brave, individual, luxurious and elegant. Cory&Phäe manufactures under fair conditions in Germany. It is particularly important to Cory&Phäe that every item of collection sold makes a contribution to social organizations. Every part of the collection has a sign that says who is supported by the purchase.'
+      description: 'Unique, brave, individual, luxurious and elegant. Cory&Phäe manufactures under fair conditions in Germany. It is particularly important to Cory&Phäe that every item of collection sold makes a contribution to social organizations. Every part of the collection has a sign that says who is supported by the purchase.',
+      status: "Accepted"
 )
 cory_phae.photo.attach(io: file_cp, filename: 'coryphae.jpg', content_type: 'image/jpg')
 cory_phae.save
@@ -425,7 +440,8 @@ file_fk = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162255848
 filippa_k = Brand.create(
       name: 'Filippa K',
       address: 'Bleichenbrücke 10, 20354 Hamburg',
-      description: 'ilippa K is a sustainable fashion label that offers a conscious choice for those looking for modern styles and timeless design with Scandinavian minimalism and durable quality. The clothes are made from ethically sourced materials and according to responsible standards.'
+      description: 'Filippa K is a sustainable fashion label that offers a conscious choice for those looking for modern styles and timeless design with Scandinavian minimalism and durable quality. The clothes are made from ethically sourced materials and according to responsible standards.',
+      status: "Accepted"
 )
 filippa_k.photo.attach(io: file_fk, filename: 'filippak.jpg', content_type: 'image/jpg')
 filippa_k.save
@@ -467,7 +483,8 @@ file_ns = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162255869
 narah_soleigh = Brand.create(
       name: 'Narah Soleigh',
       address: 'Gertigstraße 25, 22303 Hamburg',
-      description: 'Sustainable swimwear & more - for those who like to dress sustainably without compromising on style. Responsibly made from recycled and organic materials.'
+      description: 'Sustainable swimwear & more - for those who like to dress sustainably without compromising on style. Responsibly made from recycled and organic materials.',
+      status: "Accepted"
 )
 narah_soleigh.photo.attach(io: file_ns, filename: 'narah_soleigh.png', content_type: 'image/png')
 narah_soleigh.save
@@ -509,7 +526,8 @@ file_dd = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v162255898
 danle_ding = Brand.create(
       name: 'DANLE DING',
       address: '102 Lübecker Str Tür auf der linken Seite, 22087 Hamburg',
-      description: 'DANLE DING is a sustainable brand in Germany, which use only eco-friendly material and sustainable manufacture process.'
+      description: 'DANLE DING is a sustainable brand in Germany, which use only eco-friendly material and sustainable manufacture process.',
+      status: "Accepted"
 )
 danle_ding.photo.attach(io: file_dd, filename: 'danleding.png', content_type: 'image/png')
 danle_ding.save
@@ -551,7 +569,8 @@ file_achiy = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/ar_16:9
 achiy = Brand.create(
       name: 'ACHIY',
       address: 'Hohe Bleichen 26, 20354 Hamburg',
-      description: 'Inspired by the life of the indigenous people, ACHIY develops meaningful knitwear with unique stories. Every piece is handmade, limited available and follows an original production process. The spirituality with which indigenous communities create their clothing gives the products an inimitable aura.'
+      description: 'Inspired by the life of the indigenous people, ACHIY develops meaningful knitwear with unique stories. Every piece is handmade, limited available and follows an original production process. The spirituality with which indigenous communities create their clothing gives the products an inimitable aura.',
+      status: "Accepted"
 )
 achiy.photo.attach(io: file_achiy, filename: 'achiy.png', content_type: 'image/png')
 achiy.save
@@ -593,7 +612,8 @@ file_mhw = URI.open('https://res.cloudinary.com/dr8v0dbbd/image/upload/v16225596
 ma_hemp_wear = Brand.create(
       name: 'MÁ Hemp Wear',
       address: 'Holstentwiete 17, 22763 Hamburg',
-      description: 'MÁ Hemp Wear is a sustainable clothing brand that delivers refined urban clothing made from hemp. MÁ Hemp Wear brings together a  unique mix of clever design elements and fine minimalism. '
+      description: 'MÁ Hemp Wear is a sustainable clothing brand that delivers refined urban clothing made from hemp. MÁ Hemp Wear brings together a  unique mix of clever design elements and fine minimalism. ',
+      status: "Accepted"
 )
 ma_hemp_wear.photo.attach(io: file_mhw, filename: 'mhw.jpg', content_type: 'image/jpg')
 ma_hemp_wear.save
