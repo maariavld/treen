@@ -28,7 +28,7 @@ import { loadReview } from "./review";
 
 import { Popup } from "mapbox-gl";
 import { initPop } from "./popup";
-import { initFilter} from "./filter"
+import { initFilter} from "./filter";
 import { sliderInit } from "./slider";
 
 // Internal imports, e.g:
@@ -41,6 +41,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initPop();
   loadReview();
-  initFilter();
   sliderInit();
+  initFilter();
 });
