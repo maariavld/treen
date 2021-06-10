@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 2021_06_10_091243) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.bigint "user_id"
+    t.string "status"
+    t.index ["user_id"], name: "index_brands_on_user_id"
   end
 
   create_table "policies", force: :cascade do |t|
@@ -100,6 +103,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_091243) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "brand_policies", "brands"
   add_foreign_key "brand_policies", "policies"
+  add_foreign_key "brands", "users"
   add_foreign_key "reviews", "brands"
   add_foreign_key "reviews", "users"
 end
