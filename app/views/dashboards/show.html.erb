@@ -41,5 +41,10 @@
       </div>
     <% end %>
   </div>
+  <div class="favourites-card">
+    <div >
+      <span class=" d-block"><small><em class="text-muted m-3"><%= "You haven't favourited any brands yet!" if current_user.brands.favorite_brands.empty? %></em></small></span>
+    </div>
+  </div>
   <%= link_to "Delete your account", dashboard_path(current_user), method: :delete, data: { confirm: "Are you sure you want to delete your account?"}, class:"btn-edit mb-3" %>
 </div>
