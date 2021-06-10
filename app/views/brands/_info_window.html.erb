@@ -1,15 +1,78 @@
 <% #if false %>
-<%= link_to brand_path(brand) do %>
-  <h2><%= brand.name %></h2>
-<% end %>
+<div class="title">
+  <div>
+    <%= cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fill %>
+  </div>
+  <div>
+    <%= link_to brand_path(brand) do %>
+        <h2 class="brand_name"><%= brand.name %></h2>
+    <% end %>
   <p><%= brand.address %></p>
+  </div>
+</div>
+<br>
 
+  <div class="icon">
+      <% brand.brand_policies.each do |brand_policy|  %>
+      <% if brand_policy.policy.title == "Vegan" %>
+        <div class="policy-policy-icon">
+          <%= image_tag "vegan-badge.png", width:50 %>
+          <span class="badge_map" ><%= brand_policy.ranking %></span>
+        </div>
+      <% elsif  brand_policy.policy.title == "Carbon Footprint" %>
+        <div class="policy-policy-icon">
+          <%= image_tag "co2_badge.png", width:50 %>
+          <span class="badge_map" ><%= brand_policy.ranking %></span>
+        </div>
+      <% elsif  brand_policy.policy.title == "Fair Trade" %>
+        <div class="policy-policy-icon">
+          <%= image_tag "fair-trade.png", width:50 %>
+          <span class="badge_map" ><%= brand_policy.ranking %></span>
+        </div>
+      <% elsif  brand_policy.policy.title == "Organic Fabrics" %>
+        <div class="policy-policy-icon">
+          <%= image_tag "organic-badge.png", width:50 %>
+          <span class="badge_map"><%= brand_policy.ranking %></span>
+        </div>
+      <% elsif  brand_policy.policy.title == "Good Cause" %>
+        <div class="policy-policy-icon">
+          <%= image_tag "good-badge.png", width:50 %>
+          <span class="badge_map" ><%= brand_policy.ranking %></span>
+        </div>
+      <% elsif  brand_policy.policy.title == "Second Hand" %>
+        <div class="policy-policy-icon">
+          <%= image_tag "second_hand_badge.png", width:50 %>
+          <span class="badge_map" ><%= brand_policy.ranking %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
+<br>
+<% if brand.reviews.empty? %>
+  <h5>This brand has no reviews yet</h5>
+<% else %>
 <h5>Reviews</h5>
-
-
-<%#= #cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fill %>
-<% #end %>
+  <div class="text-muted mb-5">
+    <div class="reviews d-flex">
+      <% brand.reviews.each do |review| %>
+        <div class="stars">
+          <% review.rating.times do %>
+            <i class="fa fa-star" aria-hidden="true" ></i>
+          <% end %>
+          <% (5- review.rating).times do %>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          <% end %>
+          <p><%= review.content %></p>
+         <!--  <tr>
+              <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
+              <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          </tr> -->
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
 <%#= l#ink_to brand_path(brand) do %>
   <%#= cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fit %>

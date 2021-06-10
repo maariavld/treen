@@ -16,7 +16,7 @@
           </div>
         <% elsif  brand.policy.title == "Carbon Footprint" %>
           <div class="brand-policy-icon">
-            <%= image_tag "co2_badge.png", width:50 %>
+            <%= image_tag "co2-badge.png", width:50 %>
             <span class="badge badge-secondary" ><%= brand.ranking  %></span>
           </div>
         <% elsif  brand.policy.title == "Fair Trade" %>
@@ -45,7 +45,7 @@
 
 <br>
   <div class="social">
-    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'https://treen-mv.herokuapp.com', desc: @brand.name) %></a>
+    <%= social_share_button_tag('I have discovered this sustainable brand @' + @brand.name + ' on this awesome app', url: 'www.treen.xyz', desc: @brand.name) %></a>
   </div>
     <!-- <div>
       <p class="twitter">Share on</p>
