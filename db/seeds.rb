@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
+require "faker"
 
 puts "Cleaning up database..."
 BrandPolicy.destroy_all
@@ -636,6 +637,36 @@ puts "Created #{ma_hemp_wear.name} #{co_2.title}\'s policy."
 puts " #{Brand.count} brands created"
 
 # puts "Creating 10 brands..."
-
-
 # puts " 20 brands created"
+
+puts "creating 50 users"
+
+50.times do |i|
+  user = User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: "123456"
+  )
+end
+puts "created 50 users"
+puts "create 500 reviews"
+User.all.find_each do |user|
+  10.times do |x|
+    brand = Brand.find(rand(1..20))
+    quotes = [Faker::Quotes::Shakespeare.as_you_like_it_quote, Faker::Quotes::Shakespeare.hamlet_quote, Faker::Quotes::Shakespeare.king_richard_iii_quote, Faker::Quotes::Shakespeare.romeo_and_juliet_quote]
+    Review.create(
+      content: quotes.sample,
+      rating: rand(2..5),
+      brand_id: brand.id,
+      user: user,
+    )
+    puts"review done"
+  end
+end
+# brand = Brand.find(rand(1..10))
+# review = Review.create(
+#   content: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+#   review: rand(1..5)
+# )
