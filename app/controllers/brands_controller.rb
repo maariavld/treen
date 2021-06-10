@@ -35,7 +35,6 @@ skip_before_action :authenticate_user!, only: [:index, :show, :new, :create] #de
   end
 
   def show
-    @brand = Brand.find(user_id:params[current_user.id])
     @review = Review.new
     @brand_reviews = @brand.reviews
   end

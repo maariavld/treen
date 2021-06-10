@@ -16,19 +16,19 @@ h1, h2, h3, h4, h5, h6{
   height: 100%;
   width: 100%;
   object-fit: cover;
-  //position: relative;
-  //background-position:0 0,50% 50%;
-  filter: invert(15%) sepia(33%) saturate(3702%) hue-rotate(189deg) brightness(92%) contrast(95%);
+  position: relative;
+  z-index:0;
 }
-.card-trip > img:before {
+.card-trip::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg,#22263f,rgba(33,41,94,.96));
+    background: linear-gradient(180deg,#22263f,rgba(0,0,0,.96));
     mix-blend-mode: color;
     left: 0;
     top: 0;
+    z-index: 1;
 }
 .card-trip h2 {
   font-size: 15px;
