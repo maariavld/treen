@@ -1,2 +1,15 @@
 // Import page-specific CSS files here.
 @import "home";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Open+Sans:wght@400;700&display=swap');
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+body{
+font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}

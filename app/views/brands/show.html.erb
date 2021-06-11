@@ -1,10 +1,21 @@
 <div class="container">
-  <div class="row">
+  <div class="row image-brand">
       <%= cl_image_tag @brand.photo.key, class:"brand-image", :crop=>"fill" %>
   </div>
-  <h3 class="mt-3"><%= @brand.name %></h3>
-    <div class="title d-flex"><!--
-      <p><%= @average_reviews %></p> -->
+  <div class="favourites">
+    <% unless current_user.favorite_brands.exists?(id: @brand.id) %>
+      <%= link_to favorite_brands_path(brand_id: @brand), method: :post do %>
+        <i class="far fa-heart heart-custom"></i>
+      <% end %>
+    <% else %>
+      <%= link_to favorite_brand_path(@brand), method: :delete do %>
+        <i class="fas fa-heart heart-custom"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <br>
+    <div class="title d-flex">
+      <h3 class="mt-3"><%= @brand.name %></h3>
     </div>
   <p> <%= @brand.address %></p>
     <div class="icon">
@@ -51,14 +62,12 @@
           <i class="fab fa-twitter m-1"></i>
       </a>
     </div>
-
     <div class="social-container">
       <h6 class="m-2 share">Share</h6>
       <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
           <i class="fab fa-facebook-f m-1"></i>
       </a>
     </div>
-</ul>
 <br>
   <p class="text-muted"><%= @brand.description %></p>
   <div class="reviewform">
@@ -75,11 +84,7 @@
                 <% (5- review.rating).times do %>
                   <i class="fa fa-star-o" aria-hidden="true"></i>
                 <% end %>
-        <p><%= review.content %></p>
-         <!--  <tr>
-              <td><%#= link_to 'Edit', edit_brand_review_path(@brand, review) %></td>
-              <td><%#= link_to 'Delete', @brand, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-          </tr> -->
+        <p>@<%= review.user.username %> <br> <%= review.content %></p>
         </div>
       <% end %>
     </div>

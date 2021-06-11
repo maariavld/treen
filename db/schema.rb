@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_091243) do
+ActiveRecord::Schema.define(version: 2021_06_10_210151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,19 @@ ActiveRecord::Schema.define(version: 2021_06_10_091243) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.bigint "user_id"
+    t.string "status"
+    t.index ["user_id"], name: "index_brands_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "favorited_type", null: false
+    t.bigint "favorited_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "policies", force: :cascade do |t|
@@ -100,6 +113,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_091243) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "brand_policies", "brands"
   add_foreign_key "brand_policies", "policies"
+  add_foreign_key "brands", "users"
+  add_foreign_key "favorites", "users"
   add_foreign_key "reviews", "brands"
   add_foreign_key "reviews", "users"
 end

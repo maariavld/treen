@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_policy_scoped, :only => :index
   def index
     #@reviews = Review.all
     @review = policy_scope(Review)
@@ -11,7 +12,6 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    # we need `restaurant_id` to associate review with corresponding restaurant
     @brand = Brand.find(params[:brand_id])
     @review.brand = @brand
     @review.user = current_user

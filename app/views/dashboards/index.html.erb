@@ -1,0 +1,73 @@
+<div class="dashboard">
+  <div class="user-el">
+    <%= cl_image_tag current_user.photo.key.nil? ? 'https://res.cloudinary.com/dr8v0dbbd/image/upload/v1622108206/users/woman2.jpg' : current_user.profile_pic, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <h2 class="mt-3"><%= @user.first_name %> <%= @user.last_name %></h2>
+    <small>@<%= @user.username %></small>
+    <p class="mt-3"><%= link_to "Edit",  edit_user_registration_path, class: "btn-edit" %></p>
+  </div>
+  <div class="suggest-brand">
+    <%= link_to "Suggest a brand",  new_brand_path, class: "btn-edit" %>
+    <div >
+      <span class="mt-3 d-block"><small><em class="text-muted"><%= "You haven't suggested any brands yet!" if current_user.brands.empty? %></em></small></span>
+    </div>
+    <% current_user.brands.each do |brand| %>
+      <div  data-aos="zoom-in">
+        <% if brand.status == "Pending" %>
+          <div class="card-trip">
+            <%= cl_image_tag brand.photo.key %>
+            <div class="card-trip-infos">
+                <h2 class="centered-name"><%= brand.name %></h2>
+                <p class="pending-text"><i class="fas fa-spinner pending"></i> The brand is pending verification</p>
+            </div>
+          </div>
+        <%elsif brand.status == "Accepted" %>
+          <div class="card-trip">
+            <%= cl_image_tag brand.photo.key, class:"img-filter"%>
+            <div class="card-trip-infos">
+              <h2><%= brand.name %></h2>
+              <hr>
+              <p><i class="fas fa-check-double confirmed"></i>Thank you for your suggestion. <%= brand.address %> is now listed. <%= link_to 'Check it out here', brand_path %></p>
+            </div>
+          </div>
+        <%elsif brand.status == "Rejected" %>
+          <div class="card-trip">
+            <%= cl_image_tag brand.photo.key %>
+            <div class="card-trip-infos">
+              <h2><%= brand.name %></h2>
+              <p> <i class="fas fa-times rejected"></i>We're sorry, <%= brand.name %> didn't meet our sustainability rating standards. </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="favourites-card">
+    <div >
+      <span class=" d-block"><small><em class="text-muted m-3"><%= "You haven't favourited any brands yet!" if current_user.favorite_brands.empty? %></em></small></span>
+    </div>
+    <div class="set-overflow  d-flex">
+      <% current_user.favorite_brands.each do |fav|%>
+        <%= link_to brand_path(fav), class:'card-link' do %>
+          <div class="card-trip">
+            <%= cl_image_tag fav.photo.key %>
+            <div class="favourites">
+              <% unless current_user.favorite_brands.exists?(id: fav.id) %>
+                <%= link_to favorite_brands_path(brand_id: fav), method: :post do %>
+                  <i class="far fa-heart heart-custom"></i>
+                <% end %>
+              <% else %>
+                <%= link_to favorite_brand_path(fav), method: :delete do %>
+                  <i class="fas fa-heart heart-custom"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="card-trip-infos">
+              <h2 class="centered-name"><%= fav.name %></h2>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Delete your account", dashboards_path, method: :delete, data: { confirm: "Are you sure you want to delete your account?"}, class:"btn-edit mb-3" %>
+</div>
