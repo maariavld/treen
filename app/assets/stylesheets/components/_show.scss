@@ -6,7 +6,7 @@ h1, h5 {
   font-family: 'Open Sans';
 
 }
-.title {
+.title-review {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,6 +89,6 @@ padding-bottom: 200px;
 
 .reviews {
   min-height: 100px;
-  margin-bottom: 80px;
+  margin-bottom: 100%;
   overflow-x: scroll;
 }
