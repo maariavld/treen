@@ -15,7 +15,7 @@
   </div>
   <br>
     <div class="title d-flex">
-      <p><%= @average_reviews %></p>
+      <h3 class="mt-3"><%= @brand.name %></h3>
     </div>
   <p> <%= @brand.address %></p>
     <div class="icon">
@@ -55,22 +55,20 @@
     </div>
 
 <br>
-
-    <ul class="social d-flex space-between">
-  <li class="social-container">
-    <h6 class="m-3 share">Share</h6>
-    <a href="https://twitter.com/intent/tweet?url=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:"  onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class= "social-icon">
-        <i class="fab fa-twitter m-3"></i>
-    </a>
-  </li>
-  <li class="social-container">
-    <h6 class="m-3 share">Share</h6>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
-        <i class="fab fa-facebook-f m-3"></i>
-    </a>
-  </li>
-</ul>
-
+<ul class="social d-flex space-between mt-3">
+    <div class="social-container">
+      <h6 class="m-2 share">Share</h6>
+      <a href="https://twitter.com/intent/tweet?url=www.treen.xyz&text=I have discovered @<%= raw @brand.name %> which is a great sustainable shop on this amazing app. Check it out:"  onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class= "social-icon">
+          <i class="fab fa-twitter m-1"></i>
+      </a>
+    </div>
+    <div class="social-container">
+      <h6 class="m-2 share">Share</h6>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=www.treen.xyz" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;" class="social-icon">
+          <i class="fab fa-facebook-f m-1"></i>
+      </a>
+    </div>
+<br>
   <p class="text-muted"><%= @brand.description %></p>
   <div class="reviewform">
     <h5>Reviews</h5>

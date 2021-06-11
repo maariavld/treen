@@ -30,6 +30,7 @@ import { Popup } from "mapbox-gl";
 import { initPop } from "./popup";
 import { initFilter} from "./filter";
 import { sliderInit } from "./slider";
+import { initStarRating } from '../plugins/init_star_rating';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

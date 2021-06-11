@@ -39,10 +39,17 @@
   h2 {
     font-size: 30px;
     text-decoration: none !important;
+    margin-bottom: 0;
   }
 
   .title p {
     font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .brand_name {
+
+    margin-bottom: auto;
   }
 
 }
@@ -53,10 +60,10 @@ a:-webkit-any-link:focus-visible {
     text-decoration: none !important;
 }
 
-// .brand_name:focus-visible {
-//   outline: none !important;
+a:focus-visible {
+  outline: none !important;
 
-
+}
 
 h1, h5 {
   font-family: 'Open Sans';
@@ -93,7 +100,7 @@ h1, h5 {
   color: black;
 }
 
-.mapboxgl-popup-content img {
+.brand-image-popup {
   text-decoration: none;
 }
 
