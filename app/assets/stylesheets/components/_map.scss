@@ -111,6 +111,16 @@ h1, h5 {
     z-index: 100;
 }
 
+a:-webkit-any-link:focus-visible {
+    outline-offset: 0px !important;
+    color: none !important;
+    text-decoration: none !important;
+}
+
+a:focus-visible {
+  outline: none !important;
+}
+
  #map-ui {
         // display:none;
         position: absolute;

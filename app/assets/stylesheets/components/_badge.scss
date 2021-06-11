@@ -18,8 +18,17 @@
 }
 .brand-text-decoration{
   text-decoration: none;
-}
-.badge {
 
+a:-webkit-any-link:focus-visible {
+    outline-offset: 0px !important;
+    color: none !important;
+    text-decoration: none !important;
+}
+
+a:focus-visible {
+  outline: none !important;
+}
+
+.badge {
   font-size: 78%;
 }
