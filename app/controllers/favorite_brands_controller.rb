@@ -12,7 +12,7 @@ class FavoriteBrandsController < ApplicationController
 
   def destroy
     Favorite.where(favorited_id: @brand.id, user_id: current_user.id).first.destroy
-    redirect_to @brand, notice: '#{@brand.name} is no longer in favourites'
+    redirect_to @brand
   end
 
   private
