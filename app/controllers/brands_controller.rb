@@ -83,6 +83,7 @@ before_action :set_brand_policy, only: [:show]
   end
 
   def show
+    @brand = Brand.find(params[:id])
     @review = Review.new
     @brand_reviews = @brand.reviews
     @average_reviews = @brand_reviews.average(:rating)
