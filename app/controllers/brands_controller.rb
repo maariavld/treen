@@ -83,6 +83,8 @@ before_action :set_brand_policy, only: [:show]
   end
 
   def show
+    @favorite = Favorite.new
+    @user = current_user
     @brand = Brand.find(params[:id])
     @review = Review.new
     @brand_reviews = @brand.reviews
