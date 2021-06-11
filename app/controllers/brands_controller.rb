@@ -98,7 +98,7 @@ before_action :set_brand_policy, only: [:show]
     @brand.user_id = current_user.id
     @brand.status = "Pending"
     if @brand.save
-      redirect_to dashboard_path(current_user)
+      redirect_to dashboards_path
     else
       render 'new'
     end

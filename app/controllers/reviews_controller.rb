@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_policy_scoped, :only => :index
   def index
     #@reviews = Review.all
     @review = policy_scope(Review)

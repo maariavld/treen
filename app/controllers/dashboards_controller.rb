@@ -1,8 +1,10 @@
 class DashboardsController < ApplicationController
-  before_action :skip_authorization
-  before_action :set_user, only: [:show, :destroy]
+  before_action :skip_authorization, only: []
+  before_action :set_user, only: [:index, :destroy]
   before_action :set_brand, only: [:edit, :update]
-  def show
+  skip_after_action :verify_policy_scoped, :only => :index
+  def index
+    skip_authorization
    @brands = current_user.brands
   end
  def edit
@@ -12,7 +14,7 @@ class DashboardsController < ApplicationController
   def update
     # @brand = Brand.find(params[:id])
     @brand.update(brand_params)
-    redirect_to dashboard_path(current_user)
+    redirect_to dashboards_path
   end
   def destroy
     @user.destroy
