@@ -2,9 +2,9 @@
   <div class="row image-brand">
       <%= cl_image_tag @brand.photo.key, class:"brand-image", :crop=>"fill" %>
   </div>
-  <% if current_user.exists? %>
+  <% if @user.exists? %>
     <div class="favourites">
-      <% unless current_user.favorite_brands.exists?(id: @brand.id) %>
+      <% unless @user.favorite_brands.exists?(id: @brand.id) %>
         <%= link_to favorite_brands_path(brand_id: @brand), method: :post do %>
           <i class="far fa-heart heart-custom"></i>
         <% end %>
