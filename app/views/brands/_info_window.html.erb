@@ -4,7 +4,7 @@
     <%= cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fill %>
   </div>
   <div>
-    <%= link_to brand_path(brand) do %>
+    <%= link_to brand_path(brand), class:"brand-text-decoration" do %>
         <h2 class="brand_name"><%= brand.name %></h2>
     <% end %>
   <p><%= brand.address %></p>
