@@ -1,0 +1,65 @@
+.dashboard{
+  display:grid;
+  grid-template-rows: auto auto auto 0.1fr;
+  justify-items:center;
+  width:95%;
+  height:89%;
+  margin-left: 10px;
+  margin-top:10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+  }
+.user-el{
+  margin-top: 15px;
+  text-align: center;
+}
+.btn-edit{
+  padding:5px 15px;
+  border-radius: 15px;
+  background-color:rgba(242, 232, 216, 0.7);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+  color: black;
+}
+.btn-edit:hover{
+  color:black;
+}
+
+.suggest-brand{
+  margin: 20px;
+}
+
+.address-color{
+  color:white;
+}
+.pending{
+  color:rgb(243, 232, 215);
+}
+.pending-text{
+  margin-left:20px;
+}
+.accepted{
+  color:rgb(69, 89, 96);
+}
+
+.rejected{
+  color:rgb(241, 167, 114);
+}
+
+.fas{
+  margin:0;
+}
+
+.address-font{
+  font-size:18px;
+}
+
+.centered-name{
+  text-align:center;
+}
+.card-link{
+  text-decoration:none;
+}
+.favourites-card{
+  overflow-x: scroll;
+}

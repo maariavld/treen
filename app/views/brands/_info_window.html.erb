@@ -1,6 +1,6 @@
 <% #if false %>
 <div class="title">
-  <div>
+  <div class="brand-image-popup">
     <%= cl_image_tag brand.photo.key, height: 75, width: 100, crop: :fill %>
   </div>
   <div>
@@ -15,34 +15,34 @@
   <div class="icon">
       <% brand.brand_policies.each do |brand_policy|  %>
       <% if brand_policy.policy.title == "Vegan" %>
-        <div class="policy-policy-icon">
+        <div class="brand-policy-icon">
           <%= image_tag "vegan-badge.png", width:50 %>
-          <span class="badge_map" ><%= brand_policy.ranking %></span>
+          <span class="badge badge-secondary" ><%= brand_policy.ranking %></span>
         </div>
       <% elsif  brand_policy.policy.title == "Carbon Footprint" %>
-        <div class="policy-policy-icon">
+        <div class="brand-policy-icon">
           <%= image_tag "co2-badge.png", width:50 %>
-          <span class="badge_map" ><%= brand_policy.ranking %></span>
+          <span class="badge badge-secondary" ><%= brand_policy.ranking %></span>
         </div>
       <% elsif  brand_policy.policy.title == "Fair Trade" %>
-        <div class="policy-policy-icon">
+        <div class="brand-policy-icon">
           <%= image_tag "fair-trade.png", width:50 %>
-          <span class="badge_map" ><%= brand_policy.ranking %></span>
+          <span class="badge badge-secondary" ><%= brand_policy.ranking %></span>
         </div>
       <% elsif  brand_policy.policy.title == "Organic Fabrics" %>
-        <div class="policy-policy-icon">
+        <div class="brand-policy-icon">
           <%= image_tag "organic-badge.png", width:50 %>
-          <span class="badge_map"><%= brand_policy.ranking %></span>
+          <span class="badge badge-secondary"><%= brand_policy.ranking %></span>
         </div>
       <% elsif  brand_policy.policy.title == "Good Cause" %>
-        <div class="policy-policy-icon">
+        <div class="brand-policy-icon">
           <%= image_tag "good-badge.png", width:50 %>
-          <span class="badge_map" ><%= brand_policy.ranking %></span>
+          <span class="badge badge-secondary" ><%= brand_policy.ranking %></span>
         </div>
       <% elsif  brand_policy.policy.title == "Second Hand" %>
-        <div class="policy-policy-icon">
+        <div class="brand-policy-icon">
           <%= image_tag "second-hand-badge.png", width:50 %>
-          <span class="badge_map" ><%= brand_policy.ranking %></span>
+          <span class="badge badge-secondary" ><%= brand_policy.ranking %></span>
         </div>
       <% end %>
     <% end %>

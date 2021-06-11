@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:index, :show] #device: no need to sign in
+skip_before_action :authenticate_user!, only: [:index, :show, :new, :create] #device: no need to sign in
 # before_action :skip_policy_scope, only: [:index] #pundit: no need to check if authorized
 # before_action :skip_authorization, only: []
 before_action :params_permit, only: [:show]
@@ -89,7 +89,26 @@ before_action :set_brand_policy, only: [:show]
     @average_reviews = @brand_reviews.average(:rating)
   end
 
+  def new
+    @brand = Brand.new
+  end
+
+  def create
+    @brand = Brand.new(brand_params)
+    @brand.user_id = current_user.id
+    @brand.status = "Pending"
+    if @brand.save
+      redirect_to dashboards_path
+    else
+      render 'new'
+    end
+  end
+
   private
+
+  def brand_params
+    params.require(:brand).permit(:name, :address, :description, :status, :photo)
+  end
 
   def set_brand_policy
     @brand_policies = BrandPolicy.where(brand_id:params[:id])
@@ -98,10 +117,4 @@ before_action :set_brand_policy, only: [:show]
   def params_permit
     params.permit(:id)
   end
-
-#   private
-
-#  def policy_params
-#     params.require(:policy).permit(:vegan, :good, :co2 )
-#  end
 end

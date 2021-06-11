@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :brands, only: [ :new, :create, :show, :index ] do
     resources :reviews, only: [:index, :new, :create, :edit, :update, :destroy]
   end
+  resources :dashboards, only:[ :index, :destroy]
+  resources :favorite_brands, only: [:create, :destroy]
 end

@@ -6,7 +6,7 @@ h1, h5 {
   font-family: 'Open Sans';
 
 }
-.title {
+.title-review {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,7 +54,6 @@ padding-bottom: 200px;
 // }
 
 .brand-image {
-
   width: 100vw;
   height: 30vh;
   object-fit: cover;
@@ -67,6 +66,7 @@ padding-bottom: 200px;
    h5 {
     font-size: 18px;
     margin-right: 10px;
+    margin-left: 0px;
    }
 }
 
@@ -83,11 +83,12 @@ padding-bottom: 200px;
   }
 
   i {
-  color: #e9c46a;
+  color:rgb(243, 232, 215);
   }
 }
 
 .reviews {
-  margin-bottom: 80px;
+  min-height: 100px;
+  margin-bottom: 100%;
   overflow-x: scroll;
 }
