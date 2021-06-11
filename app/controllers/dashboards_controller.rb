@@ -12,7 +12,7 @@ class DashboardsController < ApplicationController
   def update
     # @brand = Brand.find(params[:id])
     @brand.update(brand_params)
-    redirect_to dashboards_path(current_user)
+    redirect_to dashboard_path(current_user)
   end
   def destroy
     @user.destroy
