@@ -109,7 +109,6 @@ before_action :set_brand_policy, only: [:show]
   def brand_params
     params.require(:brand).permit(:name, :address, :description, :status, :photo)
   end
-  private
 
   def set_brand_policy
     @brand_policies = BrandPolicy.where(brand_id:params[:id])
